@@ -49,15 +49,12 @@
   p {
     margin-bottom: 1.2rem;
   }
-  a.email-link, .squeeze-btn {
+  .email-link, .squeeze-btn, .mailto-btn {
     color: #f39c12;
     font-weight: 600;
     text-decoration: none;
   }
-  a.email-link:hover, .squeeze-btn:hover {
-    text-decoration: underline;
-  }
-  .squeeze-btn {
+  .mailto-btn, .squeeze-btn {
     display: inline-block;
     margin-top: 15px;
     padding: 12px 20px;
@@ -68,7 +65,7 @@
     text-align: center;
     transition: background 0.2s ease;
   }
-  .squeeze-btn:hover {
+  .mailto-btn:hover, .squeeze-btn:hover {
     background: #e08e0b;
   }
   footer {
@@ -95,19 +92,20 @@
 
 <main>
   <h1>Contact Dave Graham Live</h1>
-  
+
   <p>If you’d like to book a show, ask a question, or just say hi, you have two options:</p>
-  
-  <ul>
-    <li>Submit your email and join my mailing list via my 
-      <a class="squeeze-btn" href="https://davidgraham193.systeme.io/5b22b1b8" target="_blank" rel="noopener">
-        Contact / Sales Page
-      </a>
-    </li>
-    <li>Send me a direct message: 
-      <a class="email-link" href="mailto:davegrahamlive@gmail.com">davegrahamlive@gmail.com</a>
-    </li>
-  </ul>
+
+  <!-- Breakout box: default email client -->
+  <p>Send me a direct message:</p>
+  <a class="mailto-btn" href="mailto:davegrahamlive@gmail.com?subject=Message%20from%20Website&body=Hi%20Dave,%0D%0A%0D%0A">
+    Send Email
+  </a>
+
+  <!-- Button to your Systeme.io squeeze page -->
+  <p style="margin-top:30px;">Or submit your email to join my mailing list:</p>
+  <a class="squeeze-btn" href="https://davidgraham193.systeme.io/5b22b1b8" target="_blank" rel="noopener">
+    Go to Mailing List
+  </a>
 </main>
 
 <footer>
