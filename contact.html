@@ -12,15 +12,17 @@
     background: #121212;
     color: #eee;
     line-height: 1.6;
+    text-align: center;
   }
   header {
     background: #222;
-    padding: 20px;
-    text-align: center;
+    padding: 30px 20px;
   }
   header img {
-    max-width: 300px;
+    max-width: 250px;
     height: auto;
+    display: block;
+    margin: 0 auto;
   }
   nav {
     background: #333;
@@ -45,27 +47,28 @@
   }
   h1 {
     color: #f39c12;
+    margin-bottom: 20px;
+  }
+  h2 {
+    color: #f39c12;
+    margin-top: 40px;
+    margin-bottom: 15px;
   }
   p {
-    margin-bottom: 1.2rem;
+    margin-bottom: 20px;
   }
-  .email-link, .squeeze-btn, .mailto-btn {
-    color: #f39c12;
-    font-weight: 600;
-    text-decoration: none;
-  }
-  .mailto-btn, .squeeze-btn {
+  .btn {
     display: inline-block;
     margin-top: 15px;
-    padding: 12px 20px;
+    padding: 12px 25px;
     background: #f39c12;
     color: #121212;
     border-radius: 5px;
     font-weight: 600;
-    text-align: center;
+    text-decoration: none;
     transition: background 0.2s ease;
   }
-  .mailto-btn:hover, .squeeze-btn:hover {
+  .btn:hover {
     background: #e08e0b;
   }
   footer {
@@ -81,7 +84,7 @@
 <body>
 
 <header>
-  <img src="LOGO3" alt="logo" />
+  <img src="LOGO3.png" alt="logo" />
 </header>
 
 <nav>
@@ -91,21 +94,19 @@
 </nav>
 
 <main>
-  <h1>Contact Dave Graham Live</h1>
+  <h1>Get in Touch with Dave Graham Live</h1>
+  
+  <p>Whether you’re booking a private show, have a question, or just want to say hi — I’d love to hear from you. Use one of the options below and I’ll get back to you as fast as I can.</p>
 
-  <p>If you’d like to book a show, ask a question, or just say hi, you have two options:</p>
+  <h2>Send Me a Message Directly</h2>
+  <p>Open your email client and fire off a quick note. I read every message myself.</p>
+  <a class="btn" href="mailto:davegrahamlive@gmail.com?subject=Message%20from%20Website&body=Hi%20Dave,%0D%0A%0D%0A">Send Email</a>
 
-  <!-- Breakout box: default email client -->
-  <p>Send me a direct message:</p>
-  <a class="mailto-btn" href="mailto:davegrahamlive@gmail.com?subject=Message%20from%20Website&body=Hi%20Dave,%0D%0A%0D%0A">
-    Send Email
-  </a>
+  <h2>Join My Mailing List</h2>
+  <p>Want updates, special offers, and behind-the-scenes content? Drop your email here and get on my exclusive list.</p>
+  <a class="btn" href="https://davidgraham193.systeme.io/5b22b1b8" target="_blank" rel="noopener">Go to Mailing List</a>
 
-  <!-- Button to your Systeme.io squeeze page -->
-  <p style="margin-top:30px;">Or submit your email to join my mailing list:</p>
-  <a class="squeeze-btn" href="https://davidgraham193.systeme.io/5b22b1b8" target="_blank" rel="noopener">
-    Go to Mailing List
-  </a>
+  <p style="margin-top:40px;">I’m all about keeping it simple, fun, and personal. No spam, no gimmicks — just good music, live updates, and a direct line to me.</p>
 </main>
 
 <footer>
