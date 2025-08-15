@@ -2,94 +2,27 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Contact - Dave Graham Live</title>
-<style>
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    margin: 0;
-    background: #121212;
-    color: #eee;
-    line-height: 1.6;
-  }
-  header {
-    background: #222;
-    padding: 20px;
-    text-align: center;
-  }
-  header img {
-    max-width: 300px;
-    height: auto;
-  }
-  nav {
-    background: #333;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    padding: 15px 0;
-  }
-  nav a {
-    color: #eee;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1.1rem;
-  }
-  nav a:hover {
-    color: #f39c12;
-  }
-  main {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 0 20px;
-  }
-  h1 {
-    color: #f39c12;
-  }
-  p {
-    margin-bottom: 1.2rem;
-  }
-  a.email-link {
-    color: #f39c12;
-    text-decoration: none;
-    font-weight: 600;
-  }
-  a.email-link:hover {
-    text-decoration: underline;
-  }
-  footer {
-    text-align: center;
-    padding: 20px;
-    background: #222;
-    margin-top: 60px;
-    font-size: 0.9rem;
-    color: #aaa;
-  }
-</style>
+<title>Contact | Dave Graham Live</title>
 </head>
 <body>
-
-<header>
-  <img src="LOGO3" alt="Logo" />
-</header>
-
-<nav>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="contact.html">Contact</a>
-</nav>
-
-<main>
-  <h1>Contact Dave Graham Live</h1>
-  
-  <p>If you’d like to book a show, ask a question, or just say hi, send me an email and I’ll get back to you as soon as possible.</p>
-  
-  <p>Email: <a class="email-link" href="mailto:davegrahamlive@gmail.com">davegrahamlive@gmail.com</a></p>
-</main>
-
-<footer>
-  &copy; 2025 Dave Graham Live. All rights reserved.
-</footer>
-
+  <header>
+    <img src="LOGO3.png" alt="Logo" width="200">
+    <h1>Contact Dave Graham</h1>
+  </header>
+  <form id="contactForm" onsubmit="return sendEmail();">
+    <label for="userEmail">Your Email:</label>
+    <input type="email" id="userEmail" name="userEmail" required>
+    <button type="submit">Contact Me</button>
+  </form>
+  <script>
+    function sendEmail() {
+      var userEmail = document.getElementById('userEmail').value;
+      var mailtoLink = 'mailto:davegrahamlive@gmail.net'
+        + '?subject=Contact from ' + encodeURIComponent(userEmail)
+        + '&body=Hi Dave, my email is: ' + encodeURIComponent(userEmail);
+      window.location.href = mailtoLink;
+      return false; // prevent actual form submission
+    }
+  </script>
 </body>
 </html>
