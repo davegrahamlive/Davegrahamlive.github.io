@@ -14,24 +14,63 @@
     display: block;
     margin: 0 auto 10px auto;
   }
+  form {
+    max-width: 400px;
+    margin: 0 auto;
+    background: #222;
+    padding: 24px;
+    border-radius: 8px;
+    color: #eee;
+  }
+  label {
+    display: block;
+    margin: 12px 0 6px;
+  }
+  input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    margin-bottom: 12px;
+  }
+  button {
+    background: #f39c12;
+    border: none;
+    padding: 12px 24px;
+    font-weight: 700;
+    color: #121212;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+  }
+  button:hover {
+    background: #e67e22;
+  }
 </style>
 </head>
 <body>
   <header>
-    <img src="LOGO3.png" alt="Logo">
+    <img src="LOGO3.png" alt="Dave Graham Live Logo">
     <h1>Contact Dave Graham</h1>
   </header>
   <form id="contactForm" onsubmit="return sendEmail();">
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" name="firstName" required>
+
     <label for="userEmail">Your Email:</label>
     <input type="email" id="userEmail" name="userEmail" required>
+
     <button type="submit">Contact Me</button>
   </form>
   <script>
     function sendEmail() {
       var userEmail = document.getElementById('userEmail').value;
+      var firstName = document.getElementById('firstName').value;
       var mailtoLink = 'mailto:davegrahamlive@gmail.net'
-        + '?subject=Contact from ' + encodeURIComponent(userEmail)
-        + '&body=Hi Dave, my email is: ' + encodeURIComponent(userEmail);
+        + '?subject=Contact from ' + encodeURIComponent(firstName)
+        + '&body=Hi Dave,%0D%0A%0D%0AMy name is ' + encodeURIComponent(firstName)
+        + ' and my email is ' + encodeURIComponent(userEmail) + '.%0D%0A%0D%0A[Write your message here]';
       window.location.href = mailtoLink;
       return false; // prevent actual form submission
     }
