@@ -64,7 +64,7 @@
 </head>
 <body>
   <header>
-    <img src="LOGO3.png" alt="Dave Graham Live Logo">
+    <img src="LOGO3.png" alt="Logo">
   </header>
   <nav>
     <a href="index.html">Home</a>
@@ -88,9 +88,11 @@
   <script>
     // Simple event list stored here — easy to edit
     const events = [
-      { date: "2025-08-23 19:00", title: "Franklin Elk’s Club", detail: "Cozy local spot, great drinks and good people." },
-      { date: "2025-09-05 20:00", title: "Downtown Café", detail: "Intimate atmosphere with craft coffee & wine." },
-      { date: "2025-09-18 21:00", title: "City Park Stage", detail: "Outdoor summer vibes under the stars." }
+      { date: "2025-08-16 19:00", title: "Franklin Elk’s Club 6-9p", detail: "Cozy local spot, great drinks and good people." },
+      { date: "2025-08-22 20:00", title: "Greenside Resteraunt in Tilton 6-9p", detail: "The new Pub Room is awesome!" },
+      { date: "2025-08-23 21:00", title: "Pembroke Old Home Day 3:30-4:30p", detail: "Outdoor summer vibes among the other festivities" }
+      { date: "2025-08-23 21:00", title: "Beanie's in Loudon 7-10p", detail: "Outside on the back deck for an awesome night!" }
+      { date: "2025-08-29 21:00", title: "Back Door Grill in Barnstead 7-10p", detail: "The 'happenin' watering hole just off rte 28!" }
     ];
 
     const container = document.getElementById("events-container");
