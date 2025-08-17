@@ -1,41 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dave Graham Live | Home</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dave Graham Live</title>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    margin: 0;
+    background: #121212;
+    color: #eee;
+    line-height: 1.6;
+  }
+  header {
+    background: #222;
+    padding: 20px;
+    text-align: center;
+  }
+  header img {
+    max-width: 300px;
+    height: auto;
+  }
+  nav {
+    background: #333;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 15px 0;
+  }
+  nav a {
+    color: #eee;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+  }
+  nav a:hover {
+    color: #f39c12;
+  }
+  main {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+  h1, h2 {
+    color: #f39c12;
+  }
+  .btn-squeeze {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 24px;
+    background: #f39c12;
+    color: #121212;
+    font-weight: 700;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+  .btn-squeeze:hover {
+    background: #e67e22;
+  }
+  footer {
+    text-align: center;
+    padding: 20px;
+    background: #222;
+    margin-top: 60px;
+    font-size: 0.9rem;
+    color: #aaa;
+  }
+  .content-section {
+    margin-bottom: 50px;
+  }
+</style>
 </head>
 <body>
-  <header>
-    <img src="LOGO3.png" alt="Dave Graham Live Logo" class="logo">
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="shows.html">Shows</a></li>
-        <li><a href="media.html">Media</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="https://davegrahamlive.systeme.io/gear-checklist" target="_blank" class="btn">Free Gear Checklist</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <main>
+<header>
+  <img src="LOGO3.png" alt="Logo" width="200">
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<main>
+  <section class="content-section">
     <h1>Welcome to Dave Graham Live</h1>
-    <p>Bringing the full band experience — solo. Live guitar, keyboards, vocals, and a synced light show that hits like a full production.</p>
-  </main>
+    <p>Hey, I'm Dave Graham — solo musician, singer, and MIDI wizard (Meh). If you want to take your solo show to the next level, you’re in the right place.</p>
+    <h2>Level Up Your Solo Show</h2>
+    <p>Forget the one-man guitar act and the full band hustle. I’ve created <strong>The Pro Solo Rig Method</strong>, a step-by-step system for solo performers who want to deliver a full-band experience with looping or tracks, lighting & PA/audio, and professional showmanship — all on your own.</p>
+    <p>This course shows you how to build your rig, control your music and lights, and deliver a show that keeps people coming back night after night. It also can step you up into an underserved gap in the entertainment industry: You may not make what a full band makes, but you'll make more than the acoustic solo show.</p>
+    <a href="https://davidgraham193.systeme.io/5b22b1b8" class="btn-squeeze" target="_blank" rel="noopener noreferrer">Grab the Free Level Up Checklist</a>
+  </section>
+</main>
 
-  <footer>
-    <div class="socials">
-      <a href="https://www.facebook.com/david.graham.139781/" target="_blank"><i class="fab fa-facebook"></i></a>
-      <a href="https://www.facebook.com/davegrahamlive/" target="_blank"><i class="fab fa-facebook"></i></a>
-      <a href="https://www.instagram.com/dave_graham_live/" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.tiktok.com/@davegrahamlive?lang=en" target="_blank"><i class="fab fa-tiktok"></i></a>
-      <a href="https://www.youtube.com/@davidgraham7139" target="_blank"><i class="fab fa-youtube"></i></a>
-      <a href="https://x.com/DaveGrahamLive" target="_blank"><i class="fab fa-x-twitter"></i></a>
-    </div>
-  </footer>
-</body>
-</html>
+<footer>
+  &copy; 2025 Dave Graham Live. All rights reserved.
+</footer>
