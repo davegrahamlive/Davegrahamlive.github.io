@@ -2,83 +2,46 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Dave Graham Live - Merch</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #111;
-      color: #eee;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-    }
-    header img {
-      max-width: 200px;
-      margin: 20px auto;
-      display: block;
-    }
-    nav {
-      margin: 15px 0;
-    }
-    nav a {
-      color: #eee;
-      margin: 0 10px;
-      text-decoration: none;
-    }
-    h1 {
-      font-size: 2em;
-      margin-top: 10px;
-    }
-    #qr-codes {
-      display: flex;
-      justify-content: center;
-      gap: 50px;
-      margin: 40px 0;
-    }
-    #qr-codes img {
-      max-width: 200px;
-      border: 2px solid #444;
-      border-radius: 10px;
-    }
-    footer {
-      margin: 20px 0;
-    }
-    footer a img {
-      width: 30px;
-      margin: 0 8px;
-      vertical-align: middle;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Media | Dave Graham Live</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
   <header>
-    <img src="LOGO3.png" alt="Dave Graham Live Logo">
+    <img src="LOGO3.png" alt="Dave Graham Live Logo" class="logo">
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="shows.html">Shows</a></li>
+        <li><a href="media.html">Media</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="https://davegrahamlive.systeme.io/gear-checklist" target="_blank" class="btn">Free Gear Checklist</a></li>
+      </ul>
+    </nav>
   </header>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="events.html">Events</a>
-    <a href="merch.html">Merch</a>
-  </nav>
-  <h1>Support the Music</h1>
-  <div id="qr-codes">
-    <div>
-      <p>PayPal</p>
-      <img src="paypal-qr.png" alt="PayPal QR">
-    </div>
-    <div>
-      <p>Venmo</p>
-      <img src="Venmo QR code.jpg" alt="Venmo QR">
-    </div>
-  </div>
+
+  <main>
+    <h1>Media</h1>
+    <p>Watch and listen to clips from my live shows:</p>
+    <ul>
+      <li><a href="https://www.youtube.com/@davidgraham7139" target="_blank">🎥 YouTube Channel</a></li>
+      <li><a href="https://www.tiktok.com/@davegrahamlive?lang=en" target="_blank">🎶 TikTok Clips</a></li>
+      <li><a href="https://www.instagram.com/dave_graham_live/" target="_blank">📸 Instagram Highlights</a></li>
+    </ul>
+  </main>
 
   <footer>
-    <a href="https://www.facebook.com/davegrahamlive/"><img src="icons/facebook.png" alt="Facebook"></a>
-    <a href="https://www.facebook.com/david.graham.139781/"><img src="icons/facebook.png" alt="Facebook"></a>
-    <a href="https://www.instagram.com/dave_graham_live/"><img src="icons/instagram.png" alt="Instagram"></a>
-    <a href="https://www.tiktok.com/@davegrahamlive?lang=en"><img src="icons/tiktok.png" alt="TikTok"></a>
-    <a href="https://www.youtube.com/@davidgraham7139"><img src="icons/youtube.png" alt="YouTube"></a>
-    <a href="https://x.com/DaveGrahamLive"><img src="icons/twitter.png" alt="X"></a>
+    <div class="socials">
+      <!-- Same socials -->
+      <a href="https://www.facebook.com/david.graham.139781/" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.facebook.com/davegrahamlive/" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com/dave_graham_live/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.tiktok.com/@davegrahamlive?lang=en" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="https://www.youtube.com/@davidgraham7139" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://x.com/DaveGrahamLive" target="_blank"><i class="fab fa-x-twitter"></i></a>
+    </div>
   </footer>
 </body>
 </html>
