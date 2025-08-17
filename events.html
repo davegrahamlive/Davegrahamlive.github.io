@@ -2,116 +2,46 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Dave Graham Live - Events</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #111;
-      color: #eee;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-    }
-    header img {
-      max-width: 200px;
-      margin: 20px auto;
-      display: block;
-    }
-    nav {
-      margin: 15px 0;
-    }
-    nav a {
-      color: #eee;
-      margin: 0 10px;
-      text-decoration: none;
-    }
-    h1 {
-      font-size: 2em;
-      margin-top: 10px;
-    }
-    h2 {
-      font-weight: normal;
-      color: #ccc;
-      margin-bottom: 20px;
-    }
-    #events-container {
-      max-width: 600px;
-      margin: 0 auto;
-      height: 400px;
-      overflow-y: scroll;
-      border: 1px solid #444;
-      padding: 10px;
-      border-radius: 10px;
-    }
-    .event {
-      padding: 10px;
-      margin: 10px 0;
-      border-radius: 6px;
-      background-color: #222;
-    }
-    .event.past {
-      opacity: 0.5;
-    }
-    footer {
-      margin: 20px 0;
-    }
-    footer a img {
-      width: 30px;
-      margin: 0 8px;
-      vertical-align: middle;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shows | Dave Graham Live</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
   <header>
-    <img src="LOGO3.png" alt="Logo">
+    <img src="LOGO3.png" alt="Dave Graham Live Logo" class="logo">
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="shows.html">Shows</a></li>
+        <li><a href="media.html">Media</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="https://davegrahamlive.systeme.io/gear-checklist" target="_blank" class="btn">Free Gear Checklist</a></li>
+      </ul>
+    </nav>
   </header>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="events.html">Events</a>
-    <a href="merch.html">Merch</a>
-  </nav>
-  <h1>Where the Music Meets the Night</h1>
-  <h2>Upcoming Events</h2>
-  <div id="events-container"></div>
+
+  <main>
+    <h1>Upcoming Shows</h1>
+    <p>Catch me live at venues across the region. Check back often for updated schedules.</p>
+    <ul>
+      <li>🎸 Aug 24 – Franklin Elk’s Club</li>
+      <li>🎸 Sep 7 – Local Venue TBD</li>
+      <li>🎸 Sep 21 – Private Event</li>
+    </ul>
+  </main>
 
   <footer>
-    <a href="https://www.facebook.com/davegrahamlive/"><img src="icons/facebook.png" alt="Facebook"></a>
-    <a href="https://www.facebook.com/david.graham.139781/"><img src="icons/facebook.png" alt="Facebook"></a>
-    <a href="https://www.instagram.com/dave_graham_live/"><img src="icons/instagram.png" alt="Instagram"></a>
-    <a href="https://www.tiktok.com/@davegrahamlive?lang=en"><img src="icons/tiktok.png" alt="TikTok"></a>
-    <a href="https://www.youtube.com/@davidgraham7139"><img src="icons/youtube.png" alt="YouTube"></a>
-    <a href="https://x.com/DaveGrahamLive"><img src="icons/twitter.png" alt="X"></a>
+    <div class="socials">
+      <!-- Same socials -->
+      <a href="https://www.facebook.com/david.graham.139781/" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.facebook.com/davegrahamlive/" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com/dave_graham_live/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.tiktok.com/@davegrahamlive?lang=en" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="https://www.youtube.com/@davidgraham7139" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://x.com/DaveGrahamLive" target="_blank"><i class="fab fa-x-twitter"></i></a>
+    </div>
   </footer>
-
-  <script>
-    // Simple event list stored here — easy to edit
-    const events = [
-      { date: "2025-08-16 19:00", title: "Franklin Elk’s Club 6-9p", detail: "Cozy local spot, great drinks and good people." },
-      { date: "2025-08-22 20:00", title: "Greenside Resteraunt in Tilton 6-9p", detail: "The new Pub Room is awesome!" },
-      { date: "2025-08-23 21:00", title: "Pembroke Old Home Day 3:30-4:30p", detail: "Outdoor summer vibes among the other festivities" }
-      { date: "2025-08-23 21:00", title: "Beanie's in Loudon 7-10p", detail: "Outside on the back deck for an awesome night!" }
-      { date: "2025-08-29 21:00", title: "Back Door Grill in Barnstead 7-10p", detail: "The 'happenin' watering hole just off rte 28!" }
-    ];
-
-    const container = document.getElementById("events-container");
-    const now = new Date();
-
-    events.sort((a,b) => new Date(a.date) - new Date(b.date));
-
-    events.forEach(event => {
-      const div = document.createElement("div");
-      div.className = "event";
-      const eventDate = new Date(event.date);
-
-      if (eventDate < now) div.classList.add("past");
-
-      div.innerHTML = `<strong>${eventDate.toDateString()} ${eventDate.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</strong><br>
-                       <em>${event.title}</em><br>
-                       ${event.detail}`;
-      container.appendChild(div);
-    });
-  </script>
 </body>
 </html>
