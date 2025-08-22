@@ -17,61 +17,123 @@
       margin: 20px auto;
       display: block;
     }
-    nav {
+    nav ul {
+      list-style: none;
+      padding: 0;
       margin: 15px 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
     }
     nav a {
       color: #eee;
-      margin: 0 10px;
       text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1em;
     }
     h1 {
       font-size: 2em;
       margin-top: 10px;
     }
+    #merch-shop {
+      margin: 40px 0 20px 0;
+    }
+    #merch-shop a {
+      display: inline-block;
+      padding: 16px 34px;
+      background: #24c486;
+      color: #fff;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1.3em;
+      font-weight: bold;
+      transition: background 0.2s;
+    }
+    #merch-shop a:hover {
+      background: #1e9b6f;
+    }
+    #merch-shop p {
+      font-size: 1.15em;
+      margin-bottom: 18px;
+      margin-top: 8px;
+    }
     #qr-codes {
       display: flex;
       justify-content: center;
-      gap: 50px;
+      gap: 60px;
       margin: 40px 0;
+      flex-wrap: wrap;
+    }
+    #qr-codes div {
+      background: #222;
+      border-radius: 12px;
+      padding: 18px 22px 10px 22px;
+      box-shadow: 0 2px 10px #0003;
+      min-width: 210px;
     }
     #qr-codes img {
-      max-width: 200px;
+      max-width: 170px;
       border: 2px solid #444;
       border-radius: 10px;
+      background: #fff;
+    }
+    #qr-codes p {
+      margin-bottom: 8px;
+      font-size: 1.1em;
+      letter-spacing: 0.02em;
     }
     footer {
-      margin: 20px 0;
+      margin: 30px 0 10px 0;
     }
     footer a img {
-      width: 30px;
+      width: 34px;
       margin: 0 8px;
       vertical-align: middle;
+      border-radius: 7px;
+      background: #222;
+      border: 1px solid #444;
+      padding: 3px;
+      transition: filter 0.2s;
+    }
+    footer a img:hover {
+      filter: brightness(1.5);
+      border-color: #24c486;
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="LOGO3.png" alt="Dave Graham Live Logo">
+    <img src="images/LOGO3.png" alt="Dave Graham Live Logo">
   </header>
   <nav>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="contact.html">Contact</a></li>
-    <li><a href="merch.html">Merch</a></li>
-    <li><a href="events.html">Events</a></li>
-  </ul>
-</nav>
-  <h1>Support the Music</h1>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="merch.html">Merch</a></li>
+      <li><a href="events.html">Events</a></li>
+    </ul>
+  </nav>
+
+  <h1>Support the Music & Rep the Vibe!</h1>
+
+  <div id="merch-shop">
+    <h2>🔥 Limited Edition Dave Graham Live T-Shirt! 🔥</h2>
+    <p>
+      Be among the first to own the official Dave Graham Live T-shirt! Super comfy, bold design, and perfect for gigs, road trips, or just showing your love for live music.<br>
+      <strong>This exclusive shirt won't last long—get yours before they're gone!</strong>
+    </p>
+    <a href="https://printify.com/app/store/products/1?status=published&delivery_options=standard" target="_blank" rel="noopener">Shop the T-Shirt</a>
+  </div>
+
   <div id="qr-codes">
     <div>
-      <p>PayPal</p>
-      <img src="paypal-qr.png" alt="PayPal QR">
+      <p>PayPal Tips</p>
+      <img src="qrcode.png" alt="PayPal QR">
     </div>
     <div>
-      <p>Venmo</p>
-      <img src="Venmo QR code.jpg" alt="Venmo QR">
+      <p>Venmo Tips</p>
+      <img src="venmo.png" alt="Venmo QR">
     </div>
   </div>
 
@@ -84,4 +146,4 @@
     <a href="https://x.com/DaveGrahamLive"><img src="icons/twitter.png" alt="X"></a>
   </footer>
 </body>
-</html>.
+</html>
