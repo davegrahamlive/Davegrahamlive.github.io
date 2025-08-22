@@ -3,67 +3,151 @@
 <head>
   <meta charset="UTF-8">
   <title>Dave Graham Live - Events</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
     body {
       font-family: Arial, sans-serif;
       background-color: #111;
       color: #eee;
       margin: 0;
       padding: 0;
+      min-height: 100vh;
       text-align: center;
+      box-sizing: border-box;
+      overflow-x: hidden;
     }
     header img {
-      max-width: 200px;
-      margin: 20px auto;
+      max-width: 350px;
+      width: 60vw;
+      min-width: 180px;
+      margin: 30px auto 10px auto;
       display: block;
+      transition: max-width 0.3s;
     }
     nav {
-      margin: 15px 0;
+      margin: 20px 0 10px 0;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto;
+      display: inline-flex;
+      gap: 18px;
     }
     nav a {
       color: #eee;
+      font-size: 1.35em;
       margin: 0 10px;
       text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 6px 10px;
+      border-radius: 6px;
+      transition: background 0.2s, color 0.2s;
+    }
+    nav a:hover {
+      background: #222;
+      color: #2d6cdf;
     }
     h1 {
-      font-size: 2em;
-      margin-top: 10px;
+      font-size: 2.7em;
+      margin: 22px 0 10px 0;
+      letter-spacing: 0.02em;
+      font-weight: bold;
+      line-height: 1.12;
     }
     h2 {
-      font-weight: normal;
+      font-weight: 400;
       color: #ccc;
-      margin-bottom: 20px;
+      margin-bottom: 28px;
+      font-size: 1.65em;
+      letter-spacing: 0.01em;
+    }
+    .intro-text {
+      font-size: 1.23em;
+      color: #f4e9c6;
+      margin: 0 auto 32px auto;
+      max-width: 700px;
+      line-height: 1.7;
     }
     .calendar-link {
-      margin: 40px 0;
+      margin: 35px 0 15px 0;
     }
     .calendar-link a {
       display: inline-block;
       background: #2d6cdf;
       color: #fff;
       padding: 18px 36px;
-      border-radius: 8px;
+      border-radius: 10px;
       text-decoration: none;
-      font-size: 1.2em;
+      font-size: 1.28em;
       font-weight: bold;
       transition: background 0.2s;
+      box-shadow: 0 3px 16px 0 #223c6533;
     }
     .calendar-link a:hover {
       background: #1a428e;
     }
+    .calendar-iframe-container {
+      display: flex;
+      justify-content: center;
+      margin: 0 auto 40px auto;
+      width: 100%;
+    }
+    .calendar-iframe-container iframe {
+      width: 90vw;
+      max-width: 800px;
+      min-width: 300px;
+      height: 600px;
+      border: solid 1px #777;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 20px 0 #2227;
+    }
     footer {
-      margin: 20px 0;
+      margin: 32px 0 16px 0;
     }
     footer a svg {
-      width: 30px;
-      height: 30px;
-      margin: 0 8px;
+      width: 38px;
+      height: 38px;
+      margin: 0 10px;
       vertical-align: middle;
       transition: opacity 0.2s;
       opacity: 0.85;
     }
     footer a:hover svg {
       opacity: 1;
+    }
+    @media (max-width: 600px) {
+      header img {
+        max-width: 95vw;
+        min-width: 120px;
+      }
+      nav ul {
+        gap: 6px;
+      }
+      nav a {
+        font-size: 1em;
+        padding: 4px 7px;
+      }
+      h1 {
+        font-size: 1.45em;
+      }
+      h2 {
+        font-size: 1em;
+      }
+      .calendar-link a {
+        font-size: 1em;
+        padding: 13px 16px;
+      }
+      .calendar-iframe-container iframe {
+        height: 450px;
+      }
     }
   </style>
 </head>
@@ -82,10 +166,18 @@
   </nav>
   <h1>Where the Music Meets the Night</h1>
   <h2>Upcoming Events</h2>
+  <div class="intro-text">
+    Join Dave Graham Live for unforgettable nights of music, energy, and connection! Check out the schedule below and mark your calendar. Whether you're a longtime fan or a first-timer, there's always something new happening and a friendly crowd waiting. <br><br>
+    <b>Scroll down for our full event calendar, or tap the button below to view and add events directly to your Google Calendar.</b>
+  </div>
   <div class="calendar-link">
     <a href="https://calendar.google.com/calendar/embed?src=8f482579c5563034b2175a2986f82b203f374a605a962fb26a6326f83c0f7c8e%40group.calendar.google.com&ctz=America%2FNew_York" target="_blank" rel="noopener">
       View Our Google Calendar of Events
     </a>
+  </div>
+  <div class="calendar-iframe-container">
+    <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FNew_York&showPrint=0&src=OGY0ODI1NzljNTU2MzAzNGIyMTc1YTI5ODZmODJiMjAzZjM3NGE2MDVhOTYyZmIyNmE2MzI2ZjgzYzBmN2M4ZUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%237986cb"
+      style="border:solid 1px #777" frameborder="0" scrolling="no" allowfullscreen></iframe>
   </div>
   <footer>
     <!-- Facebook 1 -->
