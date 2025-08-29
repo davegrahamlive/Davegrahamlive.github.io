@@ -1,88 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>About - Dave Graham Live</title>
-<style>
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    margin: 0;
-    background: #121212;
-    color: #eee;
-    line-height: 1.6;
-  }
-  header {
-    background: #222;
-    padding: 20px;
-    text-align: center;
-  }
-  header img {
-    max-width: 300px;
-    height: auto;
-  }
-  nav {
-    background: #333;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    padding: 15px 0;
-  }
-  nav a {
-    color: #eee;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1.1rem;
-  }
-  nav a:hover {
-    color: #f39c12;
-  }
-  main {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 0 20px;
-  }
-  h1 {
-    color: #f39c12;
-  }
-  footer {
-    text-align: center;
-    padding: 20px;
-    background: #222;
-    margin-top: 60px;
-    font-size: 0.9rem;
-    color: #aaa;
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Dave Graham Live</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      margin: 0;
+      background: #121212;
+      color: #eee;
+      line-height: 1.6;
+    }
+    header {
+      background: #222;
+      padding: 20px;
+      text-align: center;
+    }
+    header img {
+      max-width: 300px;
+      height: auto;
+    }
+    nav {
+      background: #333;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 15px 0;
+    }
+    nav a {
+      color: #eee;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+    nav a:hover {
+      color: #f39c12;
+    }
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    h1, h2 {
+      color: #f39c12;
+    }
+    .about-images-row {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 40px 0;
+    }
+    .about-images-row img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0px 4px 16px rgba(0,0,0,0.4);
+      width: 400px;
+      object-fit: cover;
+      background: #222;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #222;
+      margin-top: 60px;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+    @media (max-width: 900px) {
+      .about-images-row {
+        flex-direction: column;
+        align-items: center;
+      }
+      .about-images-row img {
+        width: 90vw;
+        max-width: 500px;
+      }
+    }
+  </style>
 </head>
 <body>
-
-<header>
-  <img src="LOGO3.png" alt="Logo" />
-</header>
-
-<nav>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="contact.html">Contact</a></li>
-    <li><a href="merch.html">Merch</a></li>
-    <li><a href="events.html">Events</a></li>
-  </ul>
-</nav>
-<main>
-  <h1>About Dave Graham Live</h1>
-  
-  <p>I’m a solo musician who sings and plays along with tracks — guitar or keyboards depending on the song — delivering a full band experience without the full band overhead. Over the years, I’ve refined my ability to lock in music, vocals, and lighting so every show feels tight, polished, and built for the crowd in front of me.</p>
-  
-  <p>I’m not chasing gimmicks. I focus on playing songs people know, taking requests when the moment’s right, and keeping the energy flowing from start to finish. My setup is built for efficiency, so I can walk in, set up, and be ready to deliver a show that feels bigger than one person should be able to pull off.</p>
-  
-  <p>Outside of music, I’ve been a martial arts instructor for over 20 years. The discipline, timing, and presence I learned on the mat carry directly into how I perform on stage — precise when it needs to be, flexible when it counts, and always tuned in to the people in front of me. Music has been a constant even longer, from my first keyboard to the fully integrated solo rig I run today.</p>
-  
-  <p>That same passion for performance and streamlined gear design led me to create <strong>The Pro Solo Rig Method</strong> — a system built for the small handful of performers who even operate in this space. Very few solo acts deliver a true full-band experience, and almost no one is teaching how to do it. This is an open lane with little competition, and I’m showing musicians exactly how to claim it — creating bigger shows, bigger paydays, and a unique spot in the market without the hassle of managing a full band.</p>
-</main>
-
-<footer>
-  &copy; 2025 Dave Graham Live. All rights reserved.
-</footer>
+  <header>
+    <img src="LOGO3.png" alt="Logo" width="200">
+  </header>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="merch.html">Merch</a></li>
+      <li><a href="events.html">Events</a></li>
+    </ul>
+  </nav>
+  <main>
+    <h1>About Dave Graham Live</h1>
+    <p>
+      I’m a solo musician who sings and plays along with tracks — guitar or keyboards depending on the song — delivering a full band experience without the full band overhead. Over the years, I’ve refined my ability to lock in music, vocals, and lighting so every show feels tight, polished, and built for the crowd in front of me.
+    </p>
+    <p>
+      I’m not chasing gimmicks. I focus on playing songs people know, taking requests when the moment’s right, and keeping the energy flowing from start to finish. My setup is built for efficiency, so I can walk in, set up, and be ready to deliver a show that feels bigger than one person should be able to pull off.
+    </p>
+    <!-- Side by side images start here -->
+    <div class="about-images-row">
+      <img src="IMG_3480.jpeg" alt="Dave Graham Live performance rig setup in a bright indoor space with a Korg Kronos keyboard, electric guitar, stage lighting, and a branded t-shirt on display.">
+      <img src="IMG_3481.jpeg" alt="Dave Graham performing live at the keyboard with stage lights, banner, and professional audio equipment.">
+    </div>
+    <!-- Side by side images end here -->
+    <p>
+      Outside of music, I’ve been a martial arts instructor for over 20 years. The discipline, timing, and presence I learned on the mat carry directly into how I perform on stage — precise when it needs to be, flexible when it counts, and always tuned in to the people in front of me. Music has been a constant even longer, from my first keyboard to the fully integrated solo rig I run today.
+    </p>
+    <p>
+      That same passion for performance and streamlined gear design led me to create <strong>The Pro Solo Rig Method</strong> — a system built for the small handful of performers who even operate in this space. Very few solo acts deliver a true full-band experience, and almost no one is teaching how to do it. This is an open lane with little competition, and I’m showing musicians exactly how to claim it — creating bigger shows, bigger paydays, and a unique spot in the market without the hassle of managing a full band.
+    </p>
+  </main>
+  <footer>
+    &copy; 2025 Dave Graham Live. All rights reserved.
+  </footer>
+</body>
+</html>
