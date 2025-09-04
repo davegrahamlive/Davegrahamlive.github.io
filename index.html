@@ -59,6 +59,24 @@
   .btn-squeeze:hover {
     background: #e67e22;
   }
+  .cta-btn {
+    display: inline-block;
+    margin: 32px 0 24px 0;
+    padding: 18px 40px;
+    background: #27ae60;
+    color: #fff;
+    font-weight: 800;
+    border-radius: 6px;
+    font-size: 1.18rem;
+    text-decoration: none;
+    transition: background 0.2s;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    letter-spacing: 0.015em;
+  }
+  .cta-btn:hover {
+    background: #1e8749;
+    color: #fff;
+  }
   footer {
     text-align: center;
     padding: 20px;
@@ -80,6 +98,24 @@
     height: auto;
     border-radius: 8px;
     box-shadow: 0px 4px 16px rgba(0,0,0,0.4);
+  }
+  .social-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 36px;
+    margin: 42px 0 0 0;
+  }
+  .social-row a img {
+    width: 36px;
+    height: 36px;
+    filter: grayscale(100%) brightness(1.2);
+    transition: filter 0.2s, transform 0.2s;
+    vertical-align: middle;
+  }
+  .social-row a:hover img {
+    filter: none;
+    transform: scale(1.13);
   }
 </style>
 </head>
@@ -110,4 +146,58 @@
     </div>
     <!-- Video embed ends here -->
     <h2>Level Up Your Solo Show</h2>
-    <p>Forget the one-man guitar act and the full band hustle. I’ve created <strong>The Pro Solo Rig Method</strong>, a step-by-step system for solo performers who want to deliver a full-band experi[...]
+    <p>Forget the one-man guitar act and the full band hustle. I’ve created <strong>The Pro Solo Rig Method</strong>, a step-by-step system for solo performers who want to deliver a full-band experience without a full band.</p>
+
+    <!-- CTA Button insert -->
+    <div style="text-align: center;">
+      <a class="cta-btn" href="https://davidgraham193.systeme.io/5b22b1b8" target="_blank" rel="noopener">Get the Free Pro Solo Rig Guide</a>
+    </div>
+
+    <p style="margin-top:32px;">
+      Playing solo with backing tracks sometimes gets a bad rap—mostly from fellow musicians and former bandmates who see it as “fake.” But here’s the fun fact: audiences don’t care about that.<br>
+      What they want is to hear the songs they love, sounding full and exciting, performed by you.
+    </p>
+
+    <!-- First NYE-Eagles.jpeg image -->
+    <div class="rig-image-container" style="margin-top: 28px;">
+      <img src="NYE-Eagles.jpeg" alt="Dave Graham Live - NYE Gig" />
+    </div>
+
+    <p style="margin-top:32px;">
+      When you add a poppin’ sound system and synced moving lights, your audience will have a blast—tracks or not. And honestly?<br>
+      So will you.<br>
+      Delivering that pro-level experience gives you confidence on stage and keeps the energy high from the first song to the last.
+    </p>
+
+    <!-- Second NYE-Eagles.jpeg image -->
+    <div class="rig-image-container" style="margin-top: 28px;">
+      <img src="NYE-Eagles.jpeg" alt="Dave Graham Live - NYE Gig 2" />
+    </div>
+
+    <!-- Social links row -->
+    <div class="social-row">
+      <a href="https://www.instagram.com/davegrahammusic" target="_blank" rel="noopener" title="Instagram">
+        <img src="insta.png" alt="Instagram" />
+      </a>
+      <a href="https://www.facebook.com/davegrahammusic" target="_blank" rel="noopener" title="Facebook">
+        <img src="fb.png" alt="Facebook" />
+      </a>
+      <a href="https://www.youtube.com/@davegrahammusic" target="_blank" rel="noopener" title="YouTube">
+        <img src="yt.png" alt="YouTube" />
+      </a>
+      <a href="https://twitter.com/davegrahammusic" target="_blank" rel="noopener" title="Twitter/X">
+        <img src="x-logo.png" alt="Twitter/X" />
+      </a>
+      <a href="https://open.spotify.com/artist/1W7qVQkz0fIrgpJ7p0Wmfz" target="_blank" rel="noopener" title="Spotify">
+        <img src="spotify.png" alt="Spotify" />
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  &copy; 2025 Dave Graham Live. All rights reserved.
+</footer>
+
+</body>
+</html>
