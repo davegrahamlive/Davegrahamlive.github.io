@@ -20,22 +20,48 @@
     header img {
       max-width: 300px;
       height: auto;
+      margin: 20px auto;
+      display: block;
     }
     nav {
       background: #333;
       display: flex;
       justify-content: center;
-      gap: 30px;
-      padding: 15px 0;
+      gap: 0;
+      padding: 0;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+    nav li {
+      flex: 1 1 0;
+      text-align: center;
     }
     nav a {
+      display: block;
       color: #eee;
       text-decoration: none;
-      font-weight: 600;
-      font-size: 1.1rem;
+      font-weight: 700;
+      font-size: 1.6em;
+      padding: 22px 0;
+      border-radius: 0;
+      transition: background 0.18s, color 0.18s;
+      letter-spacing: 0.04em;
     }
     nav a:hover {
+      background: #222;
       color: #f39c12;
+    }
+    @media (max-width: 700px) {
+      nav a {
+        font-size: 1.2em;
+        padding: 16px 0;
+      }
     }
     main {
       max-width: 900px;
@@ -61,12 +87,38 @@
       background: #222;
     }
     footer {
-      text-align: center;
-      padding: 20px;
       background: #222;
-      margin-top: 60px;
-      font-size: 0.9rem;
+      margin: 50px 0 0 0;
+      padding: 26px 0 18px 0;
+      text-align: center;
       color: #aaa;
+      font-size: 0.9rem;
+    }
+    .footer-social-row {
+      margin-bottom: 16px;
+    }
+    .social-link {
+      display: inline-block;
+      margin: 0 8px;
+      vertical-align: middle;
+      border-radius: 7px;
+      background: #222;
+      border: 1px solid #444;
+      padding: 3px;
+      transition: filter 0.2s, border-color 0.2s;
+      width: 40px;
+      height: 40px;
+      box-sizing: border-box;
+      line-height: 0;
+    }
+    .social-link:hover {
+      filter: brightness(1.5);
+      border-color: #24c486;
+    }
+    .social-link svg {
+      width: 34px;
+      height: 34px;
+      display: block;
     }
     @media (max-width: 900px) {
       .about-images-row {
@@ -82,7 +134,7 @@
 </head>
 <body>
   <header>
-    <img src="LOGO3.png" alt="Logo" width="200">
+    <img src="LOGO3.png" alt="Logo">
   </header>
   <nav>
     <ul>
@@ -96,10 +148,10 @@
   <main>
     <h1>About Dave Graham Live</h1>
     <p>
-      I’m a solo musician who sings and plays along with tracks — guitar or keyboards depending on the song — delivering a full band experience without the full band overhead. Over the years, I’ve refined my ability to lock in music, vocals, and lighting so every show feels tight, polished, and built for the crowd in front of me.
+      I’m a solo musician who sings and plays along with tracks — guitar or keyboards depending on the song — delivering a full band experience without the full band overhead. Over the years, I’ve played everything from dive bars to high-end venues, weddings, and festivals.
     </p>
     <p>
-      I’m not chasing gimmicks. I focus on playing songs people know, taking requests when the moment’s right, and keeping the energy flowing from start to finish. My setup is built for efficiency, so I can walk in, set up, and be ready to deliver a show that feels bigger than one person should be able to pull off.
+      I’m not chasing gimmicks. I focus on playing songs people know, taking requests when the moment’s right, and keeping the energy flowing from start to finish. My setup is built for efficiency and sound quality above all else.
     </p>
     <!-- Side by side images start here -->
     <div class="about-images-row">
@@ -108,14 +160,36 @@
     </div>
     <!-- Side by side images end here -->
     <p>
-      Outside of music, I’ve been a martial arts instructor for over 20 years. The discipline, timing, and presence I learned on the mat carry directly into how I perform on stage — precise when it needs to be, flexible when it counts, and always tuned in to the people in front of me. Music has been a constant even longer, from my first keyboard to the fully integrated solo rig I run today.
+      Outside of music, I’ve been a martial arts instructor for over 20 years. The discipline, timing, and presence I learned on the mat carry directly into how I perform on stage — precise when it needs to be, loose when it’s time to jam.
     </p>
     <p>
-      That same passion for performance and streamlined gear design led me to create <strong>The Pro Solo Rig Method</strong> — a system built for the small handful of performers who even operate in this space. Very few solo acts deliver a true full-band experience, and almost no one is teaching how to do it. This is an open lane with little competition, and I’m showing musicians exactly how to claim it — creating bigger shows, bigger paydays, and a unique spot in the market without the hassle of managing a full band.
+      That same passion for performance and streamlined gear design led me to create <strong>The Pro Solo Rig Method</strong> — a system built for the small handful of performers who even operate at this level. Want to learn more? <a href="https://davidgraham193.systeme.io/5b22b1b8" target="_blank" rel="noopener">Grab my free guide here</a>.
     </p>
   </main>
   <footer>
-    &copy; 2025 Dave Graham Live. All rights reserved.
+    <div class="footer-social-row">
+      <a class="social-link" href="https://www.facebook.com/davegrahamlive/" aria-label="Facebook" target="_blank" rel="noopener">
+        <svg viewBox="0 0 32 32" fill="currentColor"><circle cx="16" cy="16" r="16" fill="#1877f3"/><path fill="#fff" d="M21.5 16h-3v9h-3v-9h-2v-3h2v-1.6C15.5 9.7 16.9 9 18.4 9h2.1v3h-1.6c-.1 0-.4.2-.4.5V13h2.2l-.3 3z"/></svg>
+      </a>
+      <a class="social-link" href="https://www.facebook.com/david.graham.139781/" aria-label="Facebook (personal)" target="_blank" rel="noopener">
+        <svg viewBox="0 0 32 32" fill="currentColor"><circle cx="16" cy="16" r="16" fill="#1877f3"/><path fill="#fff" d="M21.5 16h-3v9h-3v-9h-2v-3h2v-1.6C15.5 9.7 16.9 9 18.4 9h2.1v3h-1.6c-.1 0-.4.2-.4.5V13h2.2l-.3 3z"/></svg>
+      </a>
+      <a class="social-link" href="https://www.instagram.com/dave_graham_live/" aria-label="Instagram" target="_blank" rel="noopener">
+        <svg viewBox="0 0 32 32" fill="currentColor"><radialGradient id="insta-gradient" cx="50%" cy="50%" r="75%" fx="50%" fy="50%"><stop offset="0%" stop-color="#f9ed32"/><stop offset="50%" stop-color="#ee2a7b"/><stop offset="100%" stop-color="#6228d7"/></radialGradient><circle cx="16" cy="16" r="16" fill="url(#insta-gradient)"/><rect x="9" y="9" width="14" height="14" rx="5" fill="none" stroke="#fff" stroke-width="2"/><circle cx="21.5" cy="10.5" r="1.5" fill="#fff"/></svg>
+      </a>
+      <a class="social-link" href="https://www.tiktok.com/@davegrahamlive?lang=en" aria-label="TikTok" target="_blank" rel="noopener">
+        <svg viewBox="0 0 32 32" fill="currentColor"><circle cx="16" cy="16" r="16" fill="#010101"/><path fill="#fff" d="M23.3 15.1c-1.9 0-3.5-1.5-3.7-3.4h-1.6v8.5c0 1.2-1 2.3-2.2 2.3s-2.2-1-2.2-2.2c0-1.1.9-2 2-2 .2 0 .5 0 .7.1v-2.5c-.2 0-.5-.1-.7-.1-2.6 0-4.8 2.1-4.8 4.8S12.4 27 15 27s4.8-2.1 4.8-4.8v-5.6c1 .7 2.2 1.1 3.5 1.1v-2.6z"/></svg>
+      </a>
+      <a class="social-link" href="https://www.youtube.com/@davidgraham7139" aria-label="YouTube" target="_blank" rel="noopener">
+        <svg viewBox="0 0 32 32" fill="currentColor"><circle cx="16" cy="16" r="16" fill="#ff0000"/><path fill="#fff" d="M22.5 13.1s-.2-1.5-.8-2.2c-.7-.8-1.5-.8-1.9-.9-2.8-.2-7-.2-7-.2s-4.2 0-7 .2c-.4.1-1.2.1-1.9.9-.6.7-.8 2.2-.8 2.2S2 14.9 2 16.7v.6c0 1.8.2 3.6.2 3.6s.2 1.5.8 2.2c.7.8 1.5.8 1.9.9 2.8.2 7 .2 7 .2s4.2 0 7-.2c.4-.1 1.2-.1 1.9-.9.6-.7.8-2.2.8-2.2s.2-1.8.2-3.6v-.6zM14 18.6v-5.2l4.6 2.6-4.6 2.6z"/></svg>
+      </a>
+      <a class="social-link" href="https://x.com/DaveGrahamLive" aria-label="X (Twitter)" target="_blank" rel="noopener">
+        <svg viewBox="0 0 32 32" fill="currentColor"><circle cx="16" cy="16" r="16" fill="#000"/><path fill="#fff" d="M21.1 10.5h2.4l-5.3 6 6.3 7.1h-5l-3.2-3.6-3.7 3.6H10l5.7-6.2-6-7h5l2.7 3.2z"/></svg>
+      </a>
+    </div>
+    <div>
+      &copy; 2025 Dave Graham Live. All rights reserved.
+    </div>
   </footer>
 </body>
 </html>
