@@ -26,17 +26,41 @@
     background: #333;
     display: flex;
     justify-content: center;
-    gap: 30px;
-    padding: 15px 0;
+    gap: 0;
+    padding: 0;
+  }
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  nav li {
+    flex: 1 1 0;
+    text-align: center;
   }
   nav a {
+    display: block;
     color: #eee;
     text-decoration: none;
-    font-weight: 600;
-    font-size: 1.1rem;
+    font-weight: 700;
+    font-size: 1.6em;
+    padding: 22px 0;
+    border-radius: 0;
+    transition: background 0.18s, color 0.18s;
+    letter-spacing: 0.04em;
   }
   nav a:hover {
+    background: #222;
     color: #f39c12;
+  }
+  @media (max-width: 700px) {
+    nav a {
+      font-size: 1.2em;
+      padding: 16px 0;
+    }
   }
   main {
     max-width: 900px;
@@ -158,7 +182,6 @@
     <!-- Video embed ends here -->
     <h2>Level Up Your Solo Show</h2>
     <p>Forget the one-man guitar act and the full band hustle. I’ve created <strong>The Pro Solo Rig Method</strong>, a step-by-step system for solo performers who want to deliver a full-band experi[...]  
-
     <!-- CTA Button insert -->
     <div style="text-align: center;">
       <a class="cta-btn" href="https://davidgraham193.systeme.io/5b22b1b8" target="_blank" rel="noopener">Get the Free Pro Solo Rig Checklist</a>
@@ -179,9 +202,6 @@
       So will you.<br>
       Delivering that pro-level experience gives you confidence on stage and keeps the energy high from the first song to the last.
     </p>
-
-     
-
      </div>
   <footer>
     <!-- Facebook 1 -->
@@ -235,7 +255,7 @@
     <a href="https://x.com/DaveGrahamLive" aria-label="X">
       <svg viewBox="0 0 24 24" fill="none">
         <rect width="24" height="24" rx="5" fill="#000"/>
-        <path d="M7 7l5.3 6.86L7 17h2.2l3.2-4.1L15.9 17H17l-5.1-6.66L17 7h-2.1l-3 3.83L8.1 7H7z" fill="#fff"/>
+        <path d="M7 7l5.3 6.86L7 17h2.2l3.2-4.1L15.9 17H17l-5.1-6.66L17 7h-2.1l-3 3.83L8.1 7H7z" fill="white"/>
       </svg>
     </a>
   </section>
