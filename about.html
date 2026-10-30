@@ -21,18 +21,13 @@
       --muted: #b9bec8;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
-      background:
-        radial-gradient(ellipse at 50% 0%, #172235 0%, var(--dark) 55%);
+      background: radial-gradient(ellipse at 50% 0%, #172235 0%, var(--dark) 55%);
       color: var(--white);
       font-family: 'Montserrat', sans-serif;
       line-height: 1.75;
@@ -121,20 +116,21 @@
       margin: 0;
     }
 
+    /* LEMON-YELLOW GRADIENT HEADINGS */
+
     .chrome-text {
-      color: #d9e7f7;
+      color: #fff000;
       background: linear-gradient(
         180deg,
-        #ffffff 0%,
-        #b9d1eb 35%,
-        #6392c4 55%,
-        #e2efff 75%,
-        #668bb6 100%
+        #ffffa0 0%,
+        #fff000 35%,
+        #ffe600 65%,
+        #fff95c 100%
       );
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      filter: drop-shadow(1px 2px 1px rgba(0,0,0,.5));
+      filter: drop-shadow(1px 2px 2px rgba(0,0,0,.7));
     }
 
     .header-subtitle {
@@ -158,20 +154,10 @@
       margin: 20px auto 45px;
     }
 
-    .intro h2 {
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      margin: 0 0 22px;
-    }
-
     .intro p {
       font-size: 1.05rem;
       color: #d3d7df;
       margin: 0 0 18px;
-    }
-
-    .highlight {
-      color: var(--yellow);
-      font-weight: 800;
     }
 
     /* PHOTOS */
@@ -231,9 +217,7 @@
       margin: 0 0 15px;
     }
 
-    .story-panel p:last-child {
-      margin-bottom: 0;
-    }
+    .story-panel p:last-child { margin-bottom: 0; }
 
     /* BOOKING CTA */
 
@@ -241,8 +225,7 @@
       text-align: center;
       margin: 65px 0 20px;
       padding: 40px 25px;
-      background:
-        linear-gradient(135deg, rgba(30,48,72,.95), rgba(13,17,25,.98));
+      background: linear-gradient(135deg, rgba(30,48,72,.95), rgba(13,17,25,.98));
       border: 1px solid rgba(75,131,196,.65);
       border-radius: 12px;
       box-shadow: 0 12px 35px rgba(0,0,0,.35);
@@ -340,9 +323,7 @@
         padding: 9px 10px;
       }
 
-      .page-header {
-        padding-top: 38px;
-      }
+      .page-header { padding-top: 38px; }
 
       .about-images-row {
         grid-template-columns: 1fr;
@@ -354,13 +335,9 @@
         max-height: 380px;
       }
 
-      .story-panel {
-        padding: 25px 22px;
-      }
+      .story-panel { padding: 25px 22px; }
 
-      .intro p {
-        font-size: .98rem;
-      }
+      .intro p { font-size: .98rem; }
     }
 
     @media (max-width: 390px) {
@@ -395,8 +372,6 @@
   <main>
 
     <section class="intro">
-      <h2 class="chrome-text">One Performer. Full-Band Sound.</h2>
-
       <p>
         I'm Dave Graham, a solo entertainer delivering the sound and energy
         of a full band without the expense or complexity of hiring one.
@@ -528,15 +503,14 @@
 
     </div>
 
-    <div>
-      Dave Graham Live · New Hampshire
-    </div>
-
-    <div>
-      © 2026 Dave Graham Live. All rights reserved.
-    </div>
+    <div>Dave Graham Live · New Hampshire</div>
+    <div>© 2026 Dave Graham Live. All rights reserved.</div>
 
   </footer>
+
+</body>
+</html>
+
 
 </body>
 </html>
