@@ -1,201 +1,357 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Dave Graham Live - Events</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="See upcoming Dave Graham Live performances in New Hampshire. Check the calendar for public shows and get in touch about private events.">
+  <title>Events | Dave Graham Live</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
+    :root {
+      --bg: #090b10;
+      --panel: #111722;
+      --blue: #2385e8;
+      --yellow: #fff000;
+      --white: #f4f5f7;
+      --muted: #aab2c0;
     }
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #111;
-      color: #eee;
-      margin: 0;
-      padding: 0;
-      min-height: 100vh;
-      text-align: center;
+
+    * {
       box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      text-align: center;
       overflow-x: hidden;
     }
-    header img {
-      max-width: 350px;
-      width: 60vw;
-      min-width: 180px;
-      margin: 30px auto 10px auto;
-      display: block;
-      transition: max-width 0.3s;
-    }
-    nav {
-      margin: 20px 0 10px 0;
-    }
-    nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 0 auto;
-      display: inline-flex;
-      gap: 18px;
-    }
-    nav a {
-      color: #eee;
-      font-size: 1.35em;
-      margin: 0 10px;
-      text-decoration: none;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      padding: 6px 10px;
-      border-radius: 6px;
-      transition: background 0.2s, color 0.2s;
-    }
-    nav a:hover {
-      background: #222;
-      color: #2d6cdf;
-    }
-    h1 {
-      font-size: 2.7em;
-      margin: 22px 0 10px 0;
-      letter-spacing: 0.02em;
-      font-weight: bold;
-      line-height: 1.12;
-    }
-    h2 {
-      font-weight: 400;
-      color: #ccc;
-      margin-bottom: 28px;
-      font-size: 1.65em;
-      letter-spacing: 0.01em;
-    }
-    .intro-text {
-      font-size: 1.23em;
-      color: #f4e9c6;
-      margin: 0 auto 32px auto;
-      max-width: 700px;
-      line-height: 1.7;
-    }
-    .calendar-link {
-      margin: 35px 0 15px 0;
-    }
-    .calendar-link a {
-      display: inline-block;
-      background: #2d6cdf;
-      color: #fff;
-      padding: 18px 36px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-size: 1.28em;
-      font-weight: bold;
-      transition: background 0.2s;
-      box-shadow: 0 3px 16px 0 #223c6533;
-    }
-    .calendar-link a:hover {
-      background: #1a428e;
-    }
-    .calendar-iframe-container {
+
+    .site-nav {
+      position: sticky;
+      top: 12px;
+      z-index: 100;
       display: flex;
       justify-content: center;
-      margin: 0 auto 40px auto;
+      flex-wrap: wrap;
+      gap: 5px;
+      width: fit-content;
+      max-width: calc(100% - 24px);
+      margin: 12px auto 0;
+      padding: 9px 13px;
+      background: rgba(12, 17, 26, .94);
+      border: 1px solid rgba(35, 133, 232, .45);
+      border-radius: 12px;
+      backdrop-filter: blur(12px);
+    }
+
+    .site-nav a {
+      color: var(--white);
+      text-decoration: none;
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+      padding: 9px 12px;
+      border-radius: 6px;
+      transition: .2s;
+    }
+
+    .site-nav a:hover {
+      color: var(--yellow);
+      background: rgba(255,255,255,.06);
+    }
+
+    .site-nav a.active {
+      color: var(--yellow);
+    }
+
+    .page-header {
+      padding: 35px 20px 24px;
+    }
+
+    .logo {
+      display: block;
+      width: min(300px, 70vw);
+      height: auto;
+      margin: 0 auto 25px;
+    }
+
+    .eyebrow {
+      color: var(--blue);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Anton', sans-serif;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(2.6rem, 7vw, 5rem);
+      line-height: 1.05;
+      margin: 0 0 12px;
+      background: linear-gradient(180deg, #fff000 10%, #ffd900 55%, #b89b00 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: clamp(.95rem, 2vw, 1.15rem);
+      line-height: 1.6;
+      margin: 0 auto;
+      max-width: 700px;
+    }
+
+    .calendar-section {
+      width: min(1100px, 94%);
+      margin: 0 auto;
+      padding: 10px 0 35px;
+    }
+
+    .calendar-frame {
       width: 100%;
-    }
-    .calendar-iframe-container iframe {
-      width: 90vw;
-      max-width: 800px;
-      min-width: 300px;
-      height: 600px;
-      border: solid 1px #777;
+      height: 720px;
+      display: block;
+      border: 1px solid rgba(35, 133, 232, .55);
+      border-radius: 12px;
       background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 2px 20px 0 #2227;
+      box-shadow: 0 10px 35px rgba(0,0,0,.35);
     }
+
+    .calendar-link {
+      margin: 18px 0 0;
+    }
+
+    .calendar-link a,
+    .booking-button {
+      display: inline-block;
+      background: var(--blue);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 800;
+      letter-spacing: .04em;
+      padding: 14px 24px;
+      border-radius: 7px;
+      transition: .2s;
+    }
+
+    .calendar-link a:hover,
+    .booking-button:hover {
+      background: #1763b3;
+      transform: translateY(-2px);
+    }
+
+    .info-section {
+      background: linear-gradient(180deg, #111722, #0b0e14);
+      border-top: 1px solid rgba(35,133,232,.25);
+      border-bottom: 1px solid rgba(35,133,232,.25);
+      padding: 55px 20px 65px;
+    }
+
+    .info-inner {
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .info-section h2 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      margin: 0 0 18px;
+      color: var(--white);
+    }
+
+    .info-section p {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.8;
+      margin: 0 auto 18px;
+    }
+
+    .booking-section {
+      padding: 55px 20px 65px;
+    }
+
+    .booking-section h2 {
+      color: var(--yellow);
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin: 0 0 15px;
+    }
+
+    .booking-section p {
+      color: var(--muted);
+      max-width: 700px;
+      margin: 0 auto 25px;
+      line-height: 1.8;
+    }
+
     footer {
-      margin: 32px 0 16px 0;
+      padding: 25px 15px 30px;
+      border-top: 1px solid rgba(35,133,232,.25);
     }
-    footer a svg {
-      width: 38px;
-      height: 38px;
-      margin: 0 10px;
+
+    footer a {
+      display: inline-block;
+      margin: 6px 8px;
+    }
+
+    footer svg {
+      width: 34px;
+      height: 34px;
+      opacity: .85;
+      transition: opacity .2s;
       vertical-align: middle;
-      transition: opacity 0.2s;
-      opacity: 0.85;
     }
+
     footer a:hover svg {
       opacity: 1;
     }
-    @media (max-width: 600px) {
-      header img {
-        max-width: 95vw;
-        min-width: 120px;
+
+    .copyright {
+      color: #737d8c;
+      font-size: .75rem;
+      margin-top: 18px;
+    }
+
+    @media (max-width: 650px) {
+      .site-nav {
+        gap: 1px;
+        padding: 6px;
       }
-      nav ul {
-        gap: 6px;
+
+      .site-nav a {
+        font-size: .68rem;
+        padding: 8px 9px;
       }
-      nav a {
-        font-size: 1em;
-        padding: 4px 7px;
+
+      .page-header {
+        padding-top: 28px;
       }
-      h1 {
-        font-size: 1.45em;
+
+      .calendar-section {
+        width: 96%;
       }
-      h2 {
-        font-size: 1em;
+
+      .calendar-frame {
+        height: 570px;
       }
-      .calendar-link a {
-        font-size: 1em;
-        padding: 13px 16px;
-      }
-      .calendar-iframe-container iframe {
-        height: 450px;
+
+      .calendar-link a,
+      .booking-button {
+        font-size: .85rem;
+        padding: 13px 17px;
       }
     }
   </style>
 </head>
+
 <body>
-  <header>
-    <img src="LOGO3.png" alt="Logo">
-  </header>
- <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="merch.html">Merch</a></li>
-      <li><a href="events.html">Events</a></li>
-      <li><a href="songs/">Songs</a></li>
-    </ul>
+
+  <nav class="site-nav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="events.html" class="active">Events</a>
+    <a href="songs.html">Song List</a>
+    <a href="merch.html">Merch</a>
+    <a href="contact.html">Contact</a>
   </nav>
-  <h1>Where the Music Meets the Night</h1>
-  <h2>Upcoming Events</h2>
-  <div class="intro-text">
-    Join Dave Graham Live for unforgettable nights of music, energy, and connection! Check out the schedule below and mark your calendar. Whether you're a longtime fan or a first-timer, there's always something new happening and a friendly crowd waiting. <br><br>
-    <b>Scroll down for our full event calendar, or tap the button below to view and add events directly to your Google Calendar.</b>
-  </div>
-  <div class="calendar-link">
-    <a href="https://calendar.google.com/calendar/embed?src=8f482579c5563034b2175a2986f82b203f374a605a962fb26a6326f83c0f7c8e%40group.calendar.google.com&ctz=America%2FNew_York" target="_blank" rel="noopener">
-      View Our Google Calendar of Events
-    </a>
-  </div>
-  <div class="calendar-iframe-container">
-    <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FNew_York&showPrint=0&src=OGY0ODI1NzljNTU2MzAzNGIyMTc1YTI5ODZmODJiMjAzZjM3NGE2MDVhOTYyZmIyNmE2MzI2ZjgzYzBmN2M4ZUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%237986cb"
-      style="border:solid 1px #777" frameborder="0" scrolling="no" allowfullscreen></iframe>
-  </div>
+
+  <header class="page-header">
+    <img class="logo" src="LOGO3.png" alt="Dave Graham Live">
+
+    <div class="eyebrow">Live Music · New Hampshire</div>
+    <h1>Catch Dave Graham Live</h1>
+    <p class="subtitle">
+      Find an upcoming show and come enjoy the music.
+    </p>
+  </header>
+
+  <main>
+
+    <section class="calendar-section">
+      <iframe
+        class="calendar-frame"
+        src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FNew_York&showPrint=0&src=OGY0ODI1NzljNTU2MzAzNGIyMTc1YTI5ODZmODJiMjAzZjM3NGE2MDVhOTYyZmIyNmE2MzI2ZjgzYzBmN2M4ZUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%237986cb"
+        frameborder="0"
+        scrolling="no"
+        title="Dave Graham Live public performance calendar">
+      </iframe>
+
+      <div class="calendar-link">
+        <a href="https://calendar.google.com/calendar/embed?src=8f482579c5563034b2175a2986f82b203f374a605a962fb26a6326f83c0f7c8e%40group.calendar.google.com&ctz=America%2FNew_York"
+           target="_blank"
+           rel="noopener">
+          OPEN FULL GOOGLE CALENDAR
+        </a>
+      </div>
+    </section>
+
+    <section class="info-section">
+      <div class="info-inner">
+        <div class="eyebrow">Come See the Show</div>
+        <h2>Make a Night of It</h2>
+
+        <p>
+          From rock and pop to country, oldies, and crowd favorites,
+          every show brings familiar music, plenty of energy, and
+          a full-band sound from one performer.
+        </p>
+
+        <p>
+          The calendar lists upcoming public performances.
+          Check back for new dates and come join the fun.
+        </p>
+      </div>
+    </section>
+
+    <section class="booking-section">
+      <div class="eyebrow">Planning an Event?</div>
+      <h2>Let's Make It a Good One.</h2>
+
+      <p>
+        Looking for entertainment for a private party, wedding,
+        or corporate event? Get in touch and let's talk about
+        making your event memorable.
+      </p>
+
+      <a class="booking-button" href="contact.html">
+        CHECK AVAILABILITY
+      </a>
+    </section>
+
+  </main>
+
   <footer>
-    <!-- Facebook 1 -->
     <a href="https://www.facebook.com/davegrahamlive/" aria-label="Facebook">
       <svg viewBox="0 0 24 24" fill="none">
         <rect width="24" height="24" rx="5" fill="#1877F3"/>
         <path d="M17 8.5V6.5C17 5.94772 16.5523 5.5 16 5.5H14C12.8954 5.5 12 6.39543 12 7.5V8.5H10V11H12V18H15V11H16.5L17 8.5H15V7.5C15 7.22386 15.2239 7 15.5 7H17Z" fill="white"/>
       </svg>
     </a>
-    <!-- Facebook 2 -->
-    <a href="https://www.facebook.com/david.graham.139781/" aria-label="Facebook personal">
+
+    <a href="https://www.facebook.com/david.graham.139781/" aria-label="Personal Facebook">
       <svg viewBox="0 0 24 24" fill="none">
         <rect width="24" height="24" rx="5" fill="#1877F3"/>
         <path d="M17 8.5V6.5C17 5.94772 16.5523 5.5 16 5.5H14C12.8954 5.5 12 6.39543 12 7.5V8.5H10V11H12V18H15V11H16.5L17 8.5H15V7.5C15 7.22386 15.2239 7 15.5 7H17Z" fill="white"/>
       </svg>
     </a>
-    <!-- Instagram -->
+
     <a href="https://www.instagram.com/dave_graham_live/" aria-label="Instagram">
       <svg viewBox="0 0 24 24" fill="none">
         <defs>
@@ -212,29 +368,36 @@
         <circle cx="17.5" cy="6.5" r="1.5" fill="white"/>
       </svg>
     </a>
-    <!-- TikTok -->
+
     <a href="https://www.tiktok.com/@davegrahamlive?lang=en" aria-label="TikTok">
       <svg viewBox="0 0 24 24" fill="none">
         <rect width="24" height="24" rx="5" fill="#000"/>
         <path d="M16.2 7.1a4.15 4.15 0 01-1.3-2.6h-2.1v9.2a2.25 2.25 0 11-2-2.2v-2a4.25 4.25 0 102.85 4.08v-5.82a6.1 6.1 0 003.15 1.07V7.1h-.6z" fill="#fff"/>
-        <path d="M16.2 7.1a4.15 4.15 0 01-1.3-2.6h-2.1v9.2a2.25 2.25 0 11-2-2.2v-2a4.25 4.25 0 102.85 4.08v-5.82a6.1 6.1 0 003.15 1.07V7.1h-.6z" fill="#25F4EE" fill-opacity=".7"/>
-        <path d="M17.5 8.5a6.07 6.07 0 01-3.15-1.07v5.82A4.25 4.25 0 1112 8.5v2a2.25 2.25 0 102 2.2V5h2.1c.3 1.2 1 2.1 2.4 2.6z" fill="#FE2C55" fill-opacity=".7"/>
       </svg>
     </a>
-    <!-- YouTube -->
+
     <a href="https://www.youtube.com/@davidgraham7139" aria-label="YouTube">
       <svg viewBox="0 0 24 24" fill="none">
         <rect width="24" height="24" rx="5" fill="#FF0000"/>
         <polygon points="10,8 16,12 10,16" fill="white"/>
       </svg>
     </a>
-    <!-- X (Twitter) -->
+
     <a href="https://x.com/DaveGrahamLive" aria-label="X">
       <svg viewBox="0 0 24 24" fill="none">
         <rect width="24" height="24" rx="5" fill="#000"/>
         <path d="M7 7l5.3 6.86L7 17h2.2l3.2-4.1L15.9 17H17l-5.1-6.66L17 7h-2.1l-3 3.83L8.1 7H7z" fill="#fff"/>
       </svg>
     </a>
+
+    <div class="copyright">
+      Dave Graham Live · New Hampshire · © 2026
+    </div>
+  </footer>
+
+</body>
+</html>
+
   </footer>
 </body>
 </html>
