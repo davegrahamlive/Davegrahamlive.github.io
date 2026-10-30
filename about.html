@@ -1,196 +1,542 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About Dave Graham Live</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Meet Dave Graham Live — professional solo entertainment with full-band sound for private parties, corporate events, weddings, and live music venues throughout New Hampshire.">
+  <title>About Dave Graham Live | Live Entertainment</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
+    :root {
+      --yellow: #fff000;
+      --blue: #4b83c4;
+      --dark: #090b10;
+      --panel: #141820;
+      --white: #f5f5f5;
+      --muted: #b9bec8;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
       margin: 0;
-      background: #121212;
-      color: #eee;
-      line-height: 1.6;
+      background:
+        radial-gradient(ellipse at 50% 0%, #172235 0%, var(--dark) 55%);
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.75;
     }
-    header {
-      background: #222;
-      padding: 20px;
-      text-align: center;
-    }
-    header img {
-      max-width: 300px;
-      height: auto;
-      margin: 20px auto;
-      display: block;
-    }
-    nav {
-      background: #333;
+
+    /* FLOATING NAVIGATION */
+
+    .site-nav {
+      position: sticky;
+      top: 12px;
+      z-index: 1000;
+      width: fit-content;
+      max-width: calc(100% - 24px);
+      margin: 12px auto 0;
+      padding: 7px;
       display: flex;
       justify-content: center;
-      gap: 0;
-      padding: 0;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 5px;
+      background: rgba(10, 13, 20, 0.94);
+      border: 1px solid rgba(75, 131, 196, 0.65);
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0,0,0,.55);
+      backdrop-filter: blur(12px);
     }
-    nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      justify-content: center;
-      width: 100%;
-    }
-    nav li {
-      flex: 1 1 0;
-      text-align: center;
-    }
-    nav a {
-      display: block;
+
+    .site-nav a {
       color: #eee;
       text-decoration: none;
-      font-weight: 700;
-      font-size: 1.6em;
-      padding: 22px 0;
-      border-radius: 0;
-      transition: background 0.18s, color 0.18s;
-      letter-spacing: 0.04em;
+      font-family: 'Anton', sans-serif;
+      font-size: 15px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 10px 15px;
+      border-radius: 6px;
+      transition: background .2s, color .2s, transform .2s;
+      white-space: nowrap;
     }
-    nav a:hover {
-      background: #222;
-      color: #f39c12;
+
+    .site-nav a:hover {
+      color: var(--yellow);
+      background: #202a39;
+      transform: translateY(-1px);
     }
-    @media (max-width: 700px) {
-      nav a {
-        font-size: 1.2em;
-        padding: 16px 0;
-      }
+
+    .site-nav a.active {
+      color: var(--yellow);
+      background: #26364c;
+      box-shadow: inset 0 -2px 0 var(--yellow);
     }
+
+    /* PAGE HEADER */
+
+    .page-header {
+      text-align: center;
+      padding: 55px 20px 25px;
+    }
+
+    .page-header img {
+      display: block;
+      width: min(240px, 65vw);
+      height: auto;
+      margin: 0 auto 28px;
+    }
+
+    .eyebrow {
+      color: var(--yellow);
+      font-size: .8rem;
+      font-weight: 800;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Anton', sans-serif;
+      font-style: italic;
+      text-transform: uppercase;
+      line-height: 1.12;
+      letter-spacing: .5px;
+    }
+
+    h1 {
+      font-size: clamp(2.8rem, 7vw, 5.2rem);
+      margin: 0;
+    }
+
+    .chrome-text {
+      color: #d9e7f7;
+      background: linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #b9d1eb 35%,
+        #6392c4 55%,
+        #e2efff 75%,
+        #668bb6 100%
+      );
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(1px 2px 1px rgba(0,0,0,.5));
+    }
+
+    .header-subtitle {
+      max-width: 700px;
+      margin: 18px auto 0;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    /* MAIN CONTENT */
+
     main {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
+      width: min(100% - 40px, 1000px);
+      margin: 0 auto;
+      padding-bottom: 65px;
     }
-    h1, h2 {
-      color: #f39c12;
+
+    .intro {
+      text-align: center;
+      max-width: 850px;
+      margin: 20px auto 45px;
     }
+
+    .intro h2 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      margin: 0 0 22px;
+    }
+
+    .intro p {
+      font-size: 1.05rem;
+      color: #d3d7df;
+      margin: 0 0 18px;
+    }
+
+    .highlight {
+      color: var(--yellow);
+      font-weight: 800;
+    }
+
+    /* PHOTOS */
+
     .about-images-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+      margin: 45px 0 60px;
+    }
+
+    .about-images-row figure {
+      margin: 0;
+      background: var(--panel);
+      padding: 9px;
+      border: 1px solid rgba(75, 131, 196, .55);
+      border-radius: 10px;
+      box-shadow: 0 12px 30px rgba(0,0,0,.4);
+      overflow: hidden;
+    }
+
+    .about-images-row img {
+      display: block;
+      width: 100%;
+      height: 310px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+
+    .about-images-row figcaption {
+      color: var(--muted);
+      font-size: .78rem;
+      text-align: center;
+      padding: 12px 6px 5px;
+      line-height: 1.5;
+    }
+
+    /* PERSONAL STORY */
+
+    .story-panel {
+      background: linear-gradient(135deg, #182131, #10141c);
+      border-left: 4px solid var(--yellow);
+      padding: 30px 34px;
+      margin: 50px 0;
+      border-radius: 0 10px 10px 0;
+      box-shadow: 0 10px 28px rgba(0,0,0,.25);
+    }
+
+    .story-panel h2 {
+      color: var(--yellow);
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      margin: 0 0 18px;
+    }
+
+    .story-panel p {
+      color: #d3d7df;
+      margin: 0 0 15px;
+    }
+
+    .story-panel p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* BOOKING CTA */
+
+    .booking-cta {
+      text-align: center;
+      margin: 65px 0 20px;
+      padding: 40px 25px;
+      background:
+        linear-gradient(135deg, rgba(30,48,72,.95), rgba(13,17,25,.98));
+      border: 1px solid rgba(75,131,196,.65);
+      border-radius: 12px;
+      box-shadow: 0 12px 35px rgba(0,0,0,.35);
+    }
+
+    .booking-cta h2 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      margin: 0 0 15px;
+    }
+
+    .booking-cta p {
+      max-width: 650px;
+      margin: 0 auto 25px;
+      color: var(--muted);
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: var(--yellow);
+      color: #090b10;
+      padding: 14px 28px;
+      border-radius: 5px;
+      font-family: 'Anton', sans-serif;
+      font-size: 1.2rem;
+      letter-spacing: 1px;
+      text-decoration: none;
+      text-transform: uppercase;
+      box-shadow: 0 4px 0 #a99f00;
+      transition: transform .2s, filter .2s;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.1);
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #080a0e;
+      border-top: 1px solid rgba(75,131,196,.4);
+      padding: 30px 20px 22px;
+      text-align: center;
+      color: #999;
+      font-size: .85rem;
+    }
+
+    .footer-social-row {
       display: flex;
       justify-content: center;
-      gap: 30px;
-      margin: 40px 0;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 18px;
     }
-    .about-images-row img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 8px;
-      box-shadow: 0px 4px 16px rgba(0,0,0,0.4);
-      width: 400px;
-      object-fit: cover;
-      background: #222;
-    }
-    footer {
-      background: #222;
-      margin: 50px 0 0 0;
-      padding: 26px 0 18px 0;
-      text-align: center;
-      color: #aaa;
-      font-size: 0.9rem;
-    }
-    .footer-social-row {
-      margin-bottom: 16px;
-    }
+
     .social-link {
-      display: inline-block;
-      margin: 0 8px;
-      vertical-align: middle;
-      border-radius: 7px;
-      background: #222;
-      border: 1px solid #444;
-      padding: 3px;
-      transition: filter 0.2s, border-color 0.2s;
-      width: 40px;
-      height: 40px;
-      box-sizing: border-box;
-      line-height: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border: 1px solid #3b4655;
+      border-radius: 8px;
+      background: #151b25;
+      transition: border-color .2s, transform .2s;
     }
+
     .social-link:hover {
-      filter: brightness(1.5);
-      border-color: #24c486;
+      border-color: var(--yellow);
+      transform: translateY(-2px);
     }
+
     .social-link svg {
-      width: 34px;
-      height: 34px;
-      display: block;
+      width: 30px;
+      height: 30px;
     }
-    @media (max-width: 900px) {
-      .about-images-row {
-        flex-direction: column;
-        align-items: center;
+
+    footer a {
+      color: var(--yellow);
+      text-decoration: none;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 700px) {
+      .site-nav {
+        width: calc(100% - 20px);
+        max-width: none;
+        gap: 2px;
+        padding: 5px;
       }
+
+      .site-nav a {
+        font-size: 12px;
+        padding: 9px 10px;
+      }
+
+      .page-header {
+        padding-top: 38px;
+      }
+
+      .about-images-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
       .about-images-row img {
-        width: 90vw;
-        max-width: 500px;
+        height: auto;
+        max-height: 380px;
+      }
+
+      .story-panel {
+        padding: 25px 22px;
+      }
+
+      .intro p {
+        font-size: .98rem;
+      }
+    }
+
+    @media (max-width: 390px) {
+      .site-nav a {
+        font-size: 11px;
+        padding: 8px 8px;
       }
     }
   </style>
 </head>
+
 <body>
-  <header>
-    <img src="LOGO3.png" alt="Logo">
-  </header>
- <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="merch.html">Merch</a></li>
-      <li><a href="events.html">Events</a></li>
-      <li><a href="songs/">Songs</a></li>
-    </ul>
+
+  <nav class="site-nav" aria-label="Main navigation">
+    <a href="index.html">Home</a>
+    <a href="about.html" class="active" aria-current="page">About</a>
+    <a href="events.html">Events</a>
+    <a href="songs.html">Song List</a>
+    <a href="merch.html">Merch</a>
+    <a href="contact.html">Contact</a>
   </nav>
+
+  <header class="page-header">
+    <img src="LOGO3.png" alt="Dave Graham Live logo">
+    <div class="eyebrow">The Man Behind the Music</div>
+    <h1 class="chrome-text">About Dave Graham</h1>
+    <p class="header-subtitle">
+      Professional live entertainment. Full-band sound. One performer.
+    </p>
+  </header>
+
   <main>
-    <h1>About Dave Graham Live</h1>
-    <p>
-      I’m a solo musician who sings and plays along with tracks — guitar or keyboards depending on the song — delivering a full band experience without the full band overhead. Over the years, I’ve played everything from dive bars to high-end venues, weddings, and festivals.
-    </p>
-    <p>
-      I’m not chasing gimmicks. I focus on playing songs people know, taking requests when the moment’s right, and keeping the energy flowing from start to finish. My setup is built for efficiency and sound quality above all else.
-    </p>
-    <!-- Side by side images start here -->
+
+    <section class="intro">
+      <h2 class="chrome-text">One Performer. Full-Band Sound.</h2>
+
+      <p>
+        I'm Dave Graham, a solo entertainer delivering the sound and energy
+        of a full band without the expense or complexity of hiring one.
+        With vocals, guitar, keyboards, and professionally produced backing
+        tracks, I bring a full, polished musical experience to private
+        parties, corporate events, weddings, and live music venues.
+      </p>
+
+      <p>
+        My approach is simple: play music people know and love, keep the
+        energy moving, and make the entertainment part of your event easy.
+        From rock, pop, and country to oldies and crowd favorites, I tailor
+        the show to the room and take requests when the moment's right.
+      </p>
+    </section>
+
     <div class="about-images-row">
-      <img src="hilltopshot.png" alt="Dave Graham Live performance rig setup in a bright indoor space with a Korg Kronos keyboard, electric guitar, stage lighting, and a branded t-shirt on display.">
-      <img src="fullrigatHilltop.png" alt="Dave Graham performing live at the keyboard with stage lights, banner, and professional audio equipment.">
+
+      <figure>
+        <img
+          src="hilltopshot.png"
+          alt="Dave Graham Live performance setup featuring keyboards, guitar, lighting, and professional equipment">
+        <figcaption>
+          A professional, full-band sound from a streamlined solo setup.
+        </figcaption>
+      </figure>
+
+      <figure>
+        <img
+          src="fullrigatHilltop.png"
+          alt="Dave performing live at his keyboard with stage lighting and sound equipment">
+        <figcaption>
+          Live performance, with the sound and energy to fill the room.
+        </figcaption>
+      </figure>
+
     </div>
-    <!-- Side by side images end here -->
-    <p>
-      Outside of music, I’ve been a martial arts instructor for over 20 years. The discipline, timing, and presence I learned on the mat carry directly into how I perform on stage — precise when it needs to be, loose when it’s time to jam.
-    </p>
-    <p>
-      That same passion for performance and streamlined gear design led me to create <strong>The Pro Solo Rig Method</strong> — a system built for the small handful of performers who even operate at this level. Want to learn more? <a href="https://davidgraham193.systeme.io/5b22b1b8" target="_blank" rel="noopener">Grab my free guide here</a>.
-    </p>
+
+    <section class="story-panel">
+      <h2>More Than Just Music</h2>
+
+      <p>
+        Outside of music, I'm a martial arts instructor with more than
+        20 years of experience. I'm also a mail carrier by day, so
+        professionalism, reliability, and showing up ready to work
+        aren't just part of the show—they're part of who I am.
+      </p>
+
+      <p>
+        Whether I'm teaching on the mat or performing on stage, I believe
+        in preparation, commitment, and giving people an experience
+        worth remembering.
+      </p>
+    </section>
+
+    <section class="booking-cta">
+      <h2 class="chrome-text">Let's Make Your Event a Good One.</h2>
+
+      <p>
+        Planning a private celebration, corporate event, wedding, or
+        looking for live entertainment at your venue? Let's talk about
+        making it a great night.
+      </p>
+
+      <a class="cta-button" href="contact.html">Get in Touch</a>
+    </section>
+
   </main>
+
   <footer>
+
     <div class="footer-social-row">
-      <a class="social-link" href="https://www.facebook.com/davegrahamlive/" aria-label="Facebook" target="_blank" rel="noopener">
-        <svg viewBox="0 0 32 32" fill="currentColor"><circle cx="16" cy="16" r="16" fill="#1877f3"/><path fill="#fff" d="M21.5 16h-3v9h-3v-9h-2v-3h2v-1.6C15.5 9.7 16.9 9 18.4 9h2.1v3h-1.6c-.1 0-.4.2-.4.5V13h2.2l-.3 3z"/></svg>
+
+      <a class="social-link" href="https://www.facebook.com/davegrahamlive/"
+         aria-label="Facebook" target="_blank" rel="noopener">
+        <svg viewBox="0 0 32 32">
+          <circle cx="16" cy="16" r="16" fill="#1877f3"/>
+          <path fill="#fff" d="M21.5 16h-3v9h-3v-9h-2v-3h2v-1.6C15.5 9.7 16.9 9 18.4 9h2.1v3h-1.6c-.1 0-.4.2-.4.5V13h2.2l-.3 3z"/>
+        </svg>
       </a>
-      <a class="social-link" href="https://www.facebook.com/david.graham.139781/" aria-label="Facebook (personal)" target="_blank" rel="noopener">
-        <svg viewBox="0 0 32 32" fill="currentColor"><circle cx="16" cy="16" r="16" fill="#1877f3"/><path fill="#fff" d="M21.5 16h-3v9h-3v-9h-2v-3h2v-1.6C15.5 9.7 16.9 9 18.4 9h2.1v3h-1.6c-.1 0-.4.2-.4.5V13h2.2l-.3 3z"/></svg>
+
+      <a class="social-link" href="https://www.facebook.com/david.graham.139781/"
+         aria-label="Personal Facebook" target="_blank" rel="noopener">
+        <svg viewBox="0 0 32 32">
+          <circle cx="16" cy="16" r="16" fill="#1877f3"/>
+          <path fill="#fff" d="M21.5 16h-3v9h-3v-9h-2v-3h2v-1.6C15.5 9.7 16.9 9 18.4 9h2.1v3h-1.6c-.1 0-.4.2-.4.5V13h2.2l-.3 3z"/>
+        </svg>
       </a>
-      <a class="social-link" href="https://www.instagram.com/dave_graham_live/" aria-label="Instagram" target="_blank" rel="noopener">
-        <svg viewBox="0 0 32 32" fill="currentColor"><radialGradient id="insta-gradient" cx="50%" cy="50%" r="75%" fx="50%" fy="50%"><stop offset="0%" stop-color="#f9ed32"/><stop offset="50%" stop-color="#ee2a7b"/><stop offset="100%" stop-color="#6228d7"/></radialGradient><circle cx="16" cy="16" r="16" fill="url(#insta-gradient)"/><rect x="9" y="9" width="14" height="14" rx="5" fill="none" stroke="#fff" stroke-width="2"/><circle cx="21.5" cy="10.5" r="1.5" fill="#fff"/></svg>
+
+      <a class="social-link" href="https://www.instagram.com/dave_graham_live/"
+         aria-label="Instagram" target="_blank" rel="noopener">
+        <svg viewBox="0 0 32 32">
+          <defs>
+            <radialGradient id="insta-gradient" cx="50%" cy="50%" r="75%">
+              <stop offset="0%" stop-color="#f9ed32"/>
+              <stop offset="50%" stop-color="#ee2a7b"/>
+              <stop offset="100%" stop-color="#6228d7"/>
+            </radialGradient>
+          </defs>
+          <circle cx="16" cy="16" r="16" fill="url(#insta-gradient)"/>
+          <rect x="9" y="9" width="14" height="14" rx="5" fill="none" stroke="#fff" stroke-width="2"/>
+          <circle cx="21.5" cy="10.5" r="1.5" fill="#fff"/>
+        </svg>
       </a>
-      <a class="social-link" href="https://www.tiktok.com/@davegrahamlive?lang=en" aria-label="TikTok" target="_blank" rel="noopener">
-        <svg viewBox="0 0 32 32" fill="currentColor"><circle cx="16" cy="16" r="16" fill="#010101"/><path fill="#fff" d="M23.3 15.1c-1.9 0-3.5-1.5-3.7-3.4h-1.6v8.5c0 1.2-1 2.3-2.2 2.3s-2.2-1-2.2-2.2c0-1.1.9-2 2-2 .2 0 .5 0 .7.1v-2.5c-.2 0-.5-.1-.7-.1-2.6 0-4.8 2.1-4.8 4.8S12.4 27 15 27s4.8-2.1 4.8-4.8v-5.6c1 .7 2.2 1.1 3.5 1.1v-2.6z"/></svg>
+
+      <a class="social-link" href="https://www.tiktok.com/@davegrahamlive"
+         aria-label="TikTok" target="_blank" rel="noopener">
+        <svg viewBox="0 0 32 32">
+          <circle cx="16" cy="16" r="16" fill="#010101"/>
+          <path fill="#fff" d="M23.3 15.1c-1.9 0-3.5-1.5-3.7-3.4h-1.6v8.5c0 1.2-1 2.3-2.2 2.3s-2.2-1-2.2-2.2c0-1.1.9-2 2-2 .2 0 .5 0 .7.1v-2.5c-.2 0-.5-.1-.7-.1-2.6 0-4.8 2.1-4.8 4.8S12.4 27 15 27s4.8-2.1 4.8-4.8v-5.6c1 .7 2.2 1.1 3.5 1.1v-2.6z"/>
+        </svg>
       </a>
-      <a class="social-link" href="https://www.youtube.com/@davidgraham7139" aria-label="YouTube" target="_blank" rel="noopener">
-        <svg viewBox="0 0 32 32" fill="currentColor"><circle cx="16" cy="16" r="16" fill="#ff0000"/><path fill="#fff" d="M22.5 13.1s-.2-1.5-.8-2.2c-.7-.8-1.5-.8-1.9-.9-2.8-.2-7-.2-7-.2s-4.2 0-7 .2c-.4.1-1.2.1-1.9.9-.6.7-.8 2.2-.8 2.2S2 14.9 2 16.7v.6c0 1.8.2 3.6.2 3.6s.2 1.5.8 2.2c.7.8 1.5.8 1.9.9 2.8.2 7 .2 7 .2s4.2 0 7-.2c.4-.1 1.2-.1 1.9-.9.6-.7.8-2.2.8-2.2s.2-1.8.2-3.6v-.6zM14 18.6v-5.2l4.6 2.6-4.6 2.6z"/></svg>
+
+      <a class="social-link" href="https://www.youtube.com/@davidgraham7139"
+         aria-label="YouTube" target="_blank" rel="noopener">
+        <svg viewBox="0 0 32 32">
+          <circle cx="16" cy="16" r="16" fill="#ff0000"/>
+          <path fill="#fff" d="M22.5 13.1s-.2-1.5-.8-2.2c-.7-.8-1.5-.8-1.9-.9-2.8-.2-7-.2-7-.2s-4.2 0-7 .2c-.4.1-1.2.1-1.9.9-.6.7-.8 2.2-.8 2.2S2 14.9 2 16.7v.6c0 1.8.2 3.6.2 3.6s.2 1.5.8 2.2c.7.8 1.5.8 1.9.9 2.8.2 7 .2 7 .2s4.2 0 7-.2c.4-.1 1.2-.1 1.9-.9.6-.7.8-2.2.8-2.2s.2-1.8.2-3.6v-.6zM14 18.6v-5.2l4.6 2.6-4.6 2.6z"/>
+        </svg>
       </a>
-      <a class="social-link" href="https://x.com/DaveGrahamLive" aria-label="X (Twitter)" target="_blank" rel="noopener">
-        <svg viewBox="0 0 32 32" fill="currentColor"><circle cx="16" cy="16" r="16" fill="#000"/><path fill="#fff" d="M21.1 10.5h2.4l-5.3 6 6.3 7.1h-5l-3.2-3.6-3.7 3.6H10l5.7-6.2-6-7h5l2.7 3.2z"/></svg>
+
+      <a class="social-link" href="https://x.com/DaveGrahamLive"
+         aria-label="X" target="_blank" rel="noopener">
+        <svg viewBox="0 0 32 32">
+          <circle cx="16" cy="16" r="16" fill="#000"/>
+          <path fill="#fff" d="M21.1 10.5h2.4l-5.3 6 6.3 7.1h-5l-3.2-3.6-3.7 3.6H10l5.7-6.2-6-7h5l2.7 3.2z"/>
+        </svg>
       </a>
+
     </div>
+
     <div>
-      &copy; 2025 Dave Graham Live. All rights reserved.
+      Dave Graham Live · New Hampshire
     </div>
+
+    <div>
+      © 2026 Dave Graham Live. All rights reserved.
+    </div>
+
   </footer>
+
 </body>
 </html>
