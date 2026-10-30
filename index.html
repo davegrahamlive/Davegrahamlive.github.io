@@ -1,270 +1,373 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Dave Graham Live</title>
-<style>
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    margin: 0;
-    background: #121212;
-    color: #eee;
-    line-height: 1.6;
-  }
-  header {
-    background: #222;
-    padding: 20px;
-    text-align: center;
-  }
-  header img {
-    max-width: 300px;
-    height: auto;
-  }
-  nav {
-    background: #333;
-    display: flex;
-    justify-content: center;
-    gap: 0;
-    padding: 0;
-  }
-  nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-  }
-  nav li {
-    flex: 1 1 0;
-    text-align: center;
-  }
-  nav a {
-    display: block;
-    color: #eee;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 1.6em;
-    padding: 22px 0;
-    border-radius: 0;
-    transition: background 0.18s, color 0.18s;
-    letter-spacing: 0.04em;
-  }
-  nav a:hover {
-    background: #222;
-    color: #f39c12;
-  }
-  @media (max-width: 700px) {
-    nav a {
-      font-size: 1.2em;
-      padding: 16px 0;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Live music for weddings, private parties, corporate events and more. Dave Graham Live delivers full-band sound with the simplicity of a solo performer.">
+  <title>Dave Graham Live | Great Entertainment</title>
+
+  <style>
+    :root {
+      --yellow: #eaff00;
+      --red: #ff3030;
+      --black: #080808;
+      --panel: #151515;
+      --white: #f7f7f7;
+      --muted: #c5c5c5;
     }
-  }
-  main {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 0 20px;
-  }
-  h1, h2 {
-    color: #f39c12;
-  }
-  .btn-squeeze {
-    display: inline-block;
-    margin-top: 25px;
-    padding: 12px 24px;
-    background: #f39c12;
-    color: #121212;
-    font-weight: 700;
-    border-radius: 5px;
-    text-decoration: none;
-  }
-  .btn-squeeze:hover {
-    background: #e67e22;
-  }
-  .cta-btn {
-    display: inline-block;
-    margin: 32px 0 24px 0;
-    padding: 18px 40px;
-    background: #27ae60;
-    color: #fff;
-    font-weight: 800;
-    border-radius: 6px;
-    font-size: 1.18rem;
-    text-decoration: none;
-    transition: background 0.2s;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
-    letter-spacing: 0.015em;
-  }
-  .cta-btn:hover {
-    background: #1e8749;
-    color: #fff;
-  }
-  footer {
-    text-align: center;
-    padding: 20px;
-    background: #222;
-    margin-top: 60px;
-    font-size: 0.9rem;
-    color: #aaa;
-  }
-  .content-section {
-    margin-bottom: 50px;
-  }
-  .rig-image-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 40px;
-  }
-  .rig-image-container img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0px 4px 16px rgba(0,0,0,0.4);
-  }
-  .social-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 36px;
-    margin: 42px 0 0 0;
-  }
-  .social-row a img {
-    width: 36px;
-    height: 36px;
-    filter: grayscale(100%) brightness(1.2);
-    transition: filter 0.2s, transform 0.2s;
-    vertical-align: middle;
-  }
-  .social-row a:hover img {
-    filter: none;
-    transform: scale(1.13);
-  }
-  /* --- NEW CSS for social SVG logos in footer --- */
-  footer a svg {
-    width: 22px;
-    height: 22px;
-    vertical-align: middle;
-    margin: 0 8px;
-    transition: transform 0.2s;
-  }
-  footer a:hover svg {
-    transform: scale(1.15);
-  }
-</style>
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--black);
+      color: var(--white);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    a { color: inherit; }
+
+    .wrap {
+      width: min(1100px, 92%);
+      margin: auto;
+    }
+
+    header {
+      text-align: center;
+      padding: 75px 0 12px;
+    }
+
+    .logo {
+      display: block;
+      width: min(330px, 78%);
+      height: auto;
+      margin: 0 auto 18px;
+    }
+
+    nav {
+      position: fixed;
+      top: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: nowrap;
+      gap: 26px;
+      padding: 12px 24px;
+      width: max-content;
+      max-width: 96%;
+      background: rgba(15, 15, 15, 0.96);
+      border: 1px solid #444;
+      border-bottom: 3px solid var(--yellow);
+      border-radius: 6px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6);
+    }
+
+    nav a {
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+
+    nav a:hover { color: var(--yellow); }
+
+    .hero {
+      text-align: center;
+      padding: 46px 0 28px;
+    }
+
+    h1 {
+      margin: 0;
+      color: var(--yellow);
+      font-size: clamp(2.5rem, 7vw, 4.8rem);
+      line-height: 1.05;
+      letter-spacing: -2px;
+    }
+
+    .subtitle {
+      max-width: 720px;
+      margin: 20px auto 28px;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2.5vw, 1.3rem);
+    }
+
+    .video {
+      width: min(850px, 100%);
+      margin: 0 auto;
+      aspect-ratio: 16 / 9;
+      background: #171717;
+      border: 2px solid #333;
+    }
+
+    .video iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .button {
+      display: inline-block;
+      margin: 28px 0 8px;
+      padding: 15px 25px;
+      background: var(--yellow);
+      color: #080808;
+      text-decoration: none;
+      font-weight: 800;
+      border-radius: 3px;
+      transition: background 0.2s;
+    }
+
+    .button:hover { background: white; }
+
+    section { padding: 44px 0; }
+
+    h2 {
+      color: var(--yellow);
+      font-size: clamp(1.7rem, 4vw, 2.5rem);
+      line-height: 1.2;
+      margin: 0 0 18px;
+    }
+
+    .intro {
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .intro p {
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .accent { color: var(--red); }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    .feature {
+      background: var(--panel);
+      padding: 23px;
+      border-top: 3px solid var(--red);
+    }
+
+    .feature h3 {
+      color: var(--yellow);
+      margin: 0 0 8px;
+    }
+
+    .feature p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      align-items: start;
+    }
+
+    .gallery img {
+      display: block;
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      object-position: center;
+      border: 1px solid #333;
+    }
+
+    .booking {
+      text-align: center;
+      background: #121212;
+      border-top: 2px solid var(--red);
+      border-bottom: 2px solid var(--red);
+      padding: 48px 20px;
+    }
+
+    .booking p {
+      color: var(--muted);
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    footer {
+      padding: 25px 0;
+      text-align: center;
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+
+    footer a { color: var(--yellow); }
+
+    @media (max-width: 700px) {
+      nav {
+        gap: 12px;
+        padding: 10px 12px;
+        width: max-content;
+        max-width: 96%;
+      }
+
+      nav a { font-size: 0.78rem; }
+
+      header { padding-top: 78px; }
+
+      .features,
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery img {
+        height: auto;
+        max-height: 500px;
+      }
+
+      .hero { padding-top: 34px; }
+
+      section { padding: 32px 0; }
+    }
+
+    @media (max-width: 360px) {
+      nav {
+        gap: 8px;
+        padding: 9px 8px;
+      }
+
+      nav a { font-size: 0.7rem; }
+    }
+  </style>
 </head>
+
 <body>
 
-<header>
-  <img src="LOGO3.png" alt="Logo" width="400">
-</header>
+  <header class="wrap">
+    <img class="logo" src="../LOGO3.jpeg" alt="Dave Graham Live">
 
-<nav>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="contact.html">Contact</a></li>
-    <li><a href="merch.html">Merch</a></li>
-    <li><a href="events.html">Events</a></li>
-    <li><a href="songs/">Songs</a></li>
-  </ul>
-</nav>
+    <nav aria-label="Main navigation">
+      <a href="#show">THE SHOW</a>
+      <a href="#photos">PHOTOS</a>
+      <a href="#booking">BOOKING</a>
+      <a href="../events.html">EVENTS</a>
+    </nav>
+  </header>
 
-<main>
-  <section class="content-section">
-    <h1>Welcome to Dave Graham Live</h1>
-    <p>Hey, I'm Dave Graham — solo musician, singer, and MIDI wizard (Meh). If you want to take your solo show to the next level, you’re in the right place.</p>
-    <!-- Video embed starts here -->
-    <div style="max-width: 640px; margin: 0 auto 30px;">
-      <iframe width="100%" height="360" src="https://www.youtube.com/embed/_LTWr3OXne0"
-        title="Level Up Your Solo Show" frameborder="0" allowfullscreen></iframe>
-    </div>
-    <!-- Video embed ends here -->
-    <h2>Level Up Your Solo Show</h2>
-    <p>Forget the one-man guitar act and the full band hustle. I’ve created <strong>The Pro Solo Rig Method</strong>, a step-by-step system for solo performers who want to deliver a full-band experi[...]  
-    <!-- CTA Button insert -->
-    <div style="text-align: center;">
-      <a class="cta-btn" href="https://davidgraham193.systeme.io/5b22b1b8" target="_blank" rel="noopener">Get the Free Pro Solo Rig Checklist</a>
-    </div>
+  <main>
 
-    <p style="margin-top:32px;">
-      Playing solo with backing tracks sometimes gets a bad rap—mostly from fellow musicians and former bandmates who see it as “fake.” But here’s the fun fact: audiences don’t care about th[...]  
-      What they want is to hear the songs they love, sounding full and exciting, performed by you.
-    </p>
+    <section class="hero wrap" id="show">
+      <h1>Great Entertainment.</h1>
 
-    <!-- First NYE-Eagles.jpeg image -->
-    <div class="rig-image-container" style="margin-top: 28px;">
-      <img src="NYE-Eagles.jpeg" alt="Dave Graham Live - NYE Gig" />
-    </div>
+      <p class="subtitle">
+        Live music for weddings, private parties, corporate events, and more —
+        with a professional who's easy to work with.
+      </p>
 
-    <p style="margin-top:32px;">
-      When you add a poppin’ sound system and synced moving lights, your audience will have a blast—tracks or not. And honestly?<br>
-      So will you.<br>
-      Delivering that pro-level experience gives you confidence on stage and keeps the energy high from the first song to the last.
-    </p>
-     </div>
+      <div class="video">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/E6fUGdEovOY"
+          title="Dave Graham Live performance video"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <a class="button" href="../contact.html">
+        Check Availability &amp; Get a Quote
+      </a>
+    </section>
+
+    <section class="wrap">
+      <div class="intro">
+        <h2>One Performer. <span class="accent">Full-Band Sound.</span></h2>
+
+        <p>
+          Vocals, guitar, keyboards, and backing tracks bring familiar rock,
+          pop, country, and oldies to life. Requests are welcome when I know the song.
+        </p>
+
+        <p>
+          My show scales to your space, with volume to suit your event —
+          from comfortable background music to a lively dance floor.
+          Professional sound, stage lighting, and quick setup and breakdown
+          keep things simple.
+        </p>
+
+        <p>
+          <strong>With all the details handled, relax and enjoy the ride.</strong>
+        </p>
+      </div>
+
+      <div class="features">
+        <article class="feature">
+          <h3>Made for Your Event</h3>
+          <p>Weddings, private parties, corporate functions, and live music venues.</p>
+        </article>
+
+        <article class="feature">
+          <h3>Music People Know</h3>
+          <p>Familiar favorites across decades and genres, with room for requests.</p>
+        </article>
+
+        <article class="feature">
+          <h3>Easy to Work With</h3>
+          <p>Professional equipment, flexible volume, and the details handled ahead of time.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="wrap" id="photos">
+      <div class="intro">
+        <h2>See the Show.</h2>
+        <p>Real performances. Real audiences. A whole lot of familiar music.</p>
+      </div>
+
+      <div class="gallery">
+        <img src="dave-arms-wide-performance.png"
+             alt="Dave Graham performing live on stage">
+
+        <img src="dave-nye-eagles.png"
+             alt="Dave Graham performing at the Eagles on New Year's Eve">
+
+        <img src="dave-purple-light-portrait.jpeg"
+             alt="Dave Graham performing under purple stage lighting">
+      </div>
+    </section>
+
+    <section class="booking" id="booking">
+      <div class="wrap">
+        <h2>Let's Make Your Event a Good One.</h2>
+
+        <p>
+          Tell me a little about your event and what you have in mind.
+          I'll help you figure out the right fit.
+        </p>
+
+        <a class="button" href="../contact.html">
+          Check Availability &amp; Get a Quote
+        </a>
+      </div>
+    </section>
+
+  </main>
+
   <footer>
-    <!-- Facebook 1 -->
-    <a href="https://www.facebook.com/davegrahamlive/" aria-label="Facebook">
-      <svg viewBox="0 0 24 24" fill="none">
-        <rect width="24" height="24" rx="5" fill="#1877F3"/>
-        <path d="M17 8.5V6.5C17 5.94772 16.5523 5.5 16 5.5H14C12.8954 5.5 12 6.39543 12 7.5V8.5H10V11H12V18H15V11H16.5L17 8.5H15V7.5C15 7.22386 15.2239 7 15.5 7H17Z" fill="white"/>
-      </svg>
-    </a>
-    <!-- Facebook 2 -->
-    <a href="https://www.facebook.com/david.graham.139781/" aria-label="Facebook personal">
-      <svg viewBox="0 0 24 24" fill="none">
-        <rect width="24" height="24" rx="5" fill="#1877F3"/>
-        <path d="M17 8.5V6.5C17 5.94772 16.5523 5.5 16 5.5H14C12.8954 5.5 12 6.39543 12 7.5V8.5H10V11H12V18H15V11H16.5L17 8.5H15V7.5C15 7.22386 15.2239 7 15.5 7H17Z" fill="white"/>
-      </svg>
-    </a>
-    <!-- Instagram -->
-    <a href="https://www.instagram.com/dave_graham_live/" aria-label="Instagram">
-      <svg viewBox="0 0 24 24" fill="none">
-        <defs>
-          <radialGradient id="ig" cx="50%" cy="50%" r="85%">
-            <stop offset="0%" stop-color="#fdf497"/>
-            <stop offset="45%" stop-color="#fdf497"/>
-            <stop offset="60%" stop-color="#fd5949"/>
-            <stop offset="90%" stop-color="#d6249f"/>
-            <stop offset="100%" stop-color="#285AEB"/>
-          </radialGradient>
-        </defs>
-        <rect width="24" height="24" rx="5" fill="url(#ig)"/>
-        <circle cx="12" cy="12" r="5" stroke="white" stroke-width="2" fill="none"/>
-        <circle cx="17.5" cy="6.5" r="1.5" fill="white"/>
-      </svg>
-    </a>
-    <!-- TikTok -->
-    <a href="https://www.tiktok.com/@davegrahamlive?lang=en" aria-label="TikTok">
-      <svg viewBox="0 0 24 24" fill="none">
-        <rect width="24" height="24" rx="5" fill="#000"/>
-        <path d="M16.2 7.1a4.15 4.15 0 01-1.3-2.6h-2.1v9.2a2.25 2.25 0 11-2-2.2v-2a4.25 4.25 0 102.85 4.08v-5.82a6.1 6.1 0 003.15 1.07V7.1h-.6z" fill="#fff"/>
-        <path d="M16.2 7.1a4.15 4.15 0 01-1.3-2.6h-2.1v9.2a2.25 2.25 0 11-2-2.2v-2a4.25 4.25 0 102.85 4.08v-5.82a6.1 6.1 0 003.15 1.07V7.1h-.6z" fill="#25F4EE" fill-opacity=".7"/>
-        <path d="M17.5 8.5a6.07 6.07 0 01-3.15-1.07v5.82A4.25 4.25 0 1112 8.5v2a2.25 2.25 0 102 2.2V5h2.1c.3 1.2 1 2.1 2.4 2.6z" fill="#FE2C55" fill-opacity=".7"/>
-      </svg>
-    </a>
-    <!-- YouTube -->
-    <a href="https://www.youtube.com/@davidgraham7139" aria-label="YouTube">
-      <svg viewBox="0 0 24 24" fill="none">
-        <rect width="24" height="24" rx="5" fill="#FF0000"/>
-        <polygon points="10,8 16,12 10,16" fill="white"/>
-      </svg>
-    </a>
-    <!-- X (Twitter) -->
-    <a href="https://x.com/DaveGrahamLive" aria-label="X">
-      <svg viewBox="0 0 24 24" fill="none">
-        <rect width="24" height="24" rx="5" fill="#000"/>
-        <path d="M7 7l5.3 6.86L7 17h2.2l3.2-4.1L15.9 17H17l-5.1-6.66L17 7h-2.1l-3 3.83L8.1 7H7z" fill="white"/>
-      </svg>
-    </a>
-  </section>
-</main>
-
-<footer>
-  &copy; 2025 Dave Graham Live. All rights reserved.
-</footer>
+    <p>Dave Graham Live · New Hampshire</p>
+    <p><a href="../events.html">Upcoming Events</a></p>
+  </footer>
 
 </body>
 </html>
