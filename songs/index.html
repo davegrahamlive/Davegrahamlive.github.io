@@ -5,6 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Dave Graham Live — Song Catalog</title>
+<meta name="description" content="Browse the Dave Graham Live song catalog by title, artist, decade, genre, and category.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,6 +27,11 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 110px;
+}
+
 body {
     margin: 0;
     background: var(--bg);
@@ -34,40 +40,54 @@ body {
     line-height: 1.6;
 }
 
+/* Floating navigation */
+
 header {
-    background: #090b10;
-    text-align: center;
-    padding: 22px 16px 16px;
-    border-bottom: 3px solid var(--blue);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    background: rgba(9, 11, 16, .97);
+    border-bottom: 2px solid var(--blue);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, .4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.header-inner {
+    max-width: 1150px;
+    margin: auto;
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
 }
 
 header img {
     display: block;
     width: 100%;
-    max-width: 280px;
+    max-width: 185px;
     height: auto;
-    margin: 0 auto;
 }
 
 nav {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 4px;
-    padding: 10px;
-    background: #111722;
-    border-bottom: 1px solid var(--border);
+    justify-content: flex-end;
+    gap: 22px;
 }
 
 nav a {
     color: var(--white);
-    padding: 10px 16px;
+    padding: 10px 0;
     text-decoration: none;
-    font-size: 13px;
-    font-weight: 700;
-    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 800;
     letter-spacing: 1px;
+    text-transform: uppercase;
     transition: color .2s ease;
+    white-space: nowrap;
 }
 
 nav a:hover,
@@ -75,6 +95,8 @@ nav a:focus,
 nav a[aria-current="page"] {
     color: var(--yellow);
 }
+
+/* Catalog layout */
 
 main {
     width: min(1200px, 100%);
@@ -169,7 +191,7 @@ td {
 
 th {
     position: sticky;
-    top: 0;
+    top: 90px;
     z-index: 1;
     background: #1b2738;
     color: var(--yellow);
@@ -191,6 +213,30 @@ td {
     color: #e2e7ee;
 }
 
+/* Mobile layout */
+
+@media (max-width: 700px) {
+    .header-inner {
+        flex-direction: column;
+        padding: 12px 12px 14px;
+        gap: 10px;
+    }
+
+    header img {
+        max-width: 155px;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 12px 16px;
+    }
+
+    nav a {
+        padding: 6px 0;
+        font-size: 10px;
+    }
+}
+
 @media (max-width: 650px) {
     main {
         padding: 26px 12px 36px;
@@ -198,11 +244,6 @@ td {
 
     .catalog-panel {
         padding: 14px;
-    }
-
-    nav a {
-        padding: 9px 10px;
-        font-size: 11px;
     }
 
     table {
@@ -225,23 +266,25 @@ td {
 <body>
 
 <header>
-    <a href="../index.html">
-        <img src="../LOGO3.png" alt="Dave Graham Live">
-    </a>
-</header>
+    <div class="header-inner">
+        <a href="../index.html">
+            <img src="../LOGO3.png" alt="Dave Graham Live">
+        </a>
 
-<nav>
-    <a href="../index.html">Home</a>
-    <a href="../about.html">About</a>
-    <a href="../contact.html">Contact</a>
-    <a href="../merch.html">Merch</a>
-    <a href="../events.html">Events</a>
-    <a href="./" aria-current="page">Songs</a>
-</nav>
+        <nav>
+            <a href="../index.html">HOME</a>
+            <a href="../about.html">ABOUT</a>
+            <a href="../events.html">EVENTS</a>
+            <a href="./" aria-current="page">SONG LIST</a>
+            <a href="../merch.html">MERCH</a>
+            <a href="../contact.html">CONTACT</a>
+        </nav>
+    </div>
+</header>
 
 <main>
 
-    <h1>The Song Catalog</h1>
+    <h1>THE SONG CATALOG</h1>
 
     <p class="intro">
         Nearly 400 songs spanning rock, pop, country, oldies, and more.
@@ -251,9 +294,10 @@ td {
 
     <section class="catalog-panel">
 
-        <p class="catalog-heading">Find Your Favorite Songs</p>
+        <p class="catalog-heading">FIND YOUR FAVORITE SONGS</p>
 
         <div class="controls">
+
             <input id="q" type="search" placeholder="Search song or artist">
 
             <select id="sort">
@@ -274,6 +318,7 @@ td {
             <select id="category">
                 <option value="">All categories</option>
             </select>
+
         </div>
 
         <div class="count" id="count"></div>
