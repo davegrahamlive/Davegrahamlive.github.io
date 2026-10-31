@@ -1,153 +1,331 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Contact - Dave Graham Live</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Dave Graham Live</title>
+<meta name="description" content="Get in touch with Dave Graham Live about live music for weddings, private parties, corporate events and venues throughout New Hampshire.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    margin: 0;
-    background: #121212;
-    color: #eee;
-    line-height: 1.6;
-    text-align: center;
-  }
+:root {
+  --bg: #090b10;
+  --panel: #11151e;
+  --field: #171b24;
+  --blue: #2385e8;
+  --yellow: #fff000;
+  --white: #ffffff;
+  --muted: #b9c0cc;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--white);
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.65;
+}
+
+a { color: inherit; text-decoration: none; }
+
+header {
+  max-width: 1150px;
+  margin: auto;
+  padding: 22px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.logo {
+  max-width: 210px;
+  height: auto;
+  display: block;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 22px;
+}
+
+nav a {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  transition: color .2s;
+}
+
+nav a:hover,
+nav a.active { color: var(--yellow); }
+
+main {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 65px 24px 85px;
+}
+
+h1, h2 {
+  font-family: 'Anton', sans-serif;
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: .5px;
+}
+
+h1 {
+  color: var(--yellow);
+  font-size: clamp(38px, 6vw, 58px);
+  margin: 0 0 22px;
+}
+
+.intro {
+  color: var(--muted);
+  font-size: 16px;
+  max-width: 730px;
+  margin-bottom: 42px;
+}
+
+.intro strong { color: var(--white); }
+
+.section-title {
+  color: var(--white);
+  font-size: 27px;
+  margin: 0 0 25px;
+}
+
+form {
+  background: var(--panel);
+  border: 1px solid #252c38;
+  border-radius: 10px;
+  padding: 32px;
+}
+
+label {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin: 0 0 8px;
+}
+
+.field { margin-bottom: 22px; }
+
+input, textarea {
+  width: 100%;
+  background: var(--field);
+  border: 1px solid #343c49;
+  border-radius: 5px;
+  color: var(--white);
+  padding: 15px 16px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--blue);
+}
+
+input::placeholder, textarea::placeholder {
+  color: #858d9b;
+}
+
+.message-heading {
+  color: var(--yellow);
+  font-family: 'Anton', sans-serif;
+  font-size: 25px;
+  font-weight: 400;
+  margin: 35px 0 10px;
+}
+
+.message-prompt {
+  color: var(--muted);
+  font-size: 14px;
+  margin: 0 0 18px;
+}
+
+textarea {
+  min-height: 190px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+button {
+  display: block;
+  width: 100%;
+  background: var(--blue);
+  color: var(--white);
+  border: 0;
+  border-radius: 5px;
+  padding: 17px 20px;
+  margin-top: 24px;
+  font-family: 'Anton', sans-serif;
+  font-size: 22px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+button:hover { background: #126bc4; }
+
+.form-note {
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+  margin: 16px 0 0;
+}
+
+.social {
+  text-align: center;
+  margin-top: 65px;
+}
+
+.social h2 {
+  color: var(--yellow);
+  font-size: 27px;
+  margin-bottom: 22px;
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+}
+
+.social-links a {
+  color: var(--white);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.social-links a:hover { color: var(--yellow); }
+
+footer {
+  border-top: 1px solid #252c38;
+  text-align: center;
+  padding: 25px 15px;
+  color: #9299a5;
+  font-size: 12px;
+}
+
+@media (max-width: 700px) {
   header {
-    background: #222;
-    padding: 30px 20px 10px 20px;
-    text-align: center;
-  }
-  header img {
-    max-width: 250px;
-    width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto 10px auto;
-  }
-  nav {
-    background: #333;
-    display: flex;
-    justify-content: center;
-    gap: 0;
-    padding: 0;
-    text-align: center;
-  }
-  nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-  }
-  nav li {
-    flex: 1 1 0;
-    text-align: center;
-  }
-  nav a {
-    display: block;
-    color: #eee;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 1.6em;
-    padding: 22px 0;
-    border-radius: 0;
-    transition: background 0.18s, color 0.18s;
-    letter-spacing: 0.04em;
-  }
-  nav a:hover {
-    background: #222;
-    color: #f39c12;
-  }
-  @media (max-width: 700px) {
-    nav a {
-      font-size: 1.2em;
-      padding: 16px 0;
-    }
-  }
-  main {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 0 20px;
-    text-align: center;
-  }
-  h1 {
-    color: #f39c12;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  h2 {
-    color: #f39c12;
-    margin-top: 40px;
-    margin-bottom: 15px;
-    text-align: center;
-  }
-  p {
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  .btn {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 12px 25px;
-    background: #f39c12;
-    color: #121212;
-    border-radius: 5px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: background 0.2s ease;
-    text-align: center;
-  }
-  .btn:hover {
-    background: #e08e0b;
-  }
-  footer {
-    text-align: center;
+    flex-direction: column;
     padding: 20px;
-    background: #222;
-    margin-top: 60px;
-    font-size: 0.9rem;
-    color: #aaa;
   }
+
+  nav {
+    justify-content: center;
+    gap: 13px 17px;
+  }
+
+  nav a { font-size: 11px; }
+
+  main { padding: 45px 18px 65px; }
+
+  form { padding: 22px 18px; }
+}
 </style>
 </head>
+
 <body>
 
 <header>
-  <img src="LOGO3.png" alt="logo" />
+  <a href="index.html">
+    <img class="logo" src="LOGO3.png" alt="Dave Graham Live">
+  </a>
+
+  <nav>
+    <a href="index.html">HOME</a>
+    <a href="about.html">ABOUT</a>
+    <a href="events.html">EVENTS</a>
+    <a href="songs/">SONG LIST</a>
+    <a href="merch.html">MERCH</a>
+    <a href="contact.html" class="active">CONTACT</a>
+  </nav>
 </header>
 
-<nav>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="contact.html">Contact</a></li>
-    <li><a href="merch.html">Merch</a></li>
-    <li><a href="events.html">Events</a></li>
-    <li><a href="songs/">Songs</a></li>
-  </ul>
-</nav>
-
 <main>
-  <h1>Get in Touch with Dave Graham Live</h1>
-  
-  <p>Whether you’re booking a private show, have a question, or just want to say hi — I’d love to hear from you. Use one of the options below and I’ll get back to you as fast as I can.</p>
 
-  <h2>Send Me a Message Directly</h2>
-  <p>Open your email client and fire off a quick note. I read every message myself.</p>
-  <a class="btn" href="mailto:davegrahamlive@gmail.com?subject=Message%20from%20Website&body=Hi%20Dave,%0D%0A%0D%0A">Send Email</a>
+  <h1>LET'S TALK ABOUT YOUR EVENT.</h1>
 
-  <h2>Join My Mailing List</h2>
-  <p>Want updates, special offers, and behind-the-scenes content? Drop your email here and get on my exclusive list.</p>
-  <a class="btn" href="https://davidgraham193.systeme.io/5b22b1b8" target="_blank" rel="noopener">Go to Mailing List</a>
+  <div class="intro">
+    <p><strong>Planning a wedding, private party, corporate event, or looking for live entertainment at your venue?</strong></p>
 
-  <p style="margin-top:40px;">I’m all about keeping it simple, fun, and personal. No spam, no gimmicks — just good music, live updates, and a direct line to me.</p>
+    <p>Tell me a little about what you have in mind. I'll get back to you personally so we can discuss the details and see what makes sense.</p>
+  </div>
+
+  <form action="YOUR_FORMSPREE_ENDPOINT" method="POST">
+
+    <input type="hidden" name="_subject" value="New Dave Graham Live Website Inquiry">
+
+    <!-- Spam protection -->
+    <input type="text" name="_gotcha" style="display:none">
+
+    <h2 class="section-title">YOUR CONTACT INFORMATION</h2>
+
+    <div class="field">
+      <label for="name">NAME *</label>
+      <input type="text" id="name" name="name" placeholder="Your name" required>
+    </div>
+
+    <div class="field">
+      <label for="email">EMAIL ADDRESS *</label>
+      <input type="email" id="email" name="email" placeholder="Your email address" required>
+    </div>
+
+    <div class="field">
+      <label for="phone">PHONE NUMBER (OPTIONAL)</label>
+      <input type="tel" id="phone" name="phone" placeholder="Your phone number">
+    </div>
+
+    <h2 class="message-heading">LOOKING FOR AVAILABILITY OR PRICING?</h2>
+
+    <p class="message-prompt">
+      Tell me a little about your plans. Helpful details include the event date, location, approximate hours, type of event, expected crowd, and any special requests.
+    </p>
+
+    <textarea
+      id="message"
+      name="message"
+      placeholder="Tell me about your event and what you have in mind for entertainment..."
+      required
+    ></textarea>
+
+    <button type="submit">SEND INQUIRY</button>
+
+    <p class="form-note">
+      I'll review your message and get back to you personally.
+    </p>
+
+  </form>
+
+  <section class="social">
+    <h2>FOLLOW DAVE GRAHAM LIVE</h2>
+
+    <div class="social-links">
+      <a href="https://www.facebook.com/davegrahamlive/" target="_blank">Facebook</a>
+      <a href="https://www.instagram.com/dave_graham_live/" target="_blank">Instagram</a>
+      <a href="https://www.tiktok.com/@davegrahamlive?lang=en" target="_blank">TikTok</a>
+      <a href="https://www.youtube.com/@davidgraham7139" target="_blank">YouTube</a>
+      <a href="https://x.com/DaveGrahamLive" target="_blank">X</a>
+    </div>
+  </section>
+
 </main>
 
 <footer>
-  &copy; 2025 Dave Graham Live. All rights reserved.
+  Dave Graham Live · New Hampshire · © 2026
 </footer>
 
 </body>
