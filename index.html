@@ -744,18 +744,29 @@
     </div>
   </footer>
 
-  <script>
-    function playShowVideo() {
-      const frame = document.getElementById('video-frame');
+    <script>
+    function unmuteShowVideo() {
+      const iframe = document.getElementById('show-video');
 
-      const iframe = document.createElement('iframe');
-      iframe.src = 'https://www.youtube-nocookie.com/embed/E6fUGdEovOY?autoplay=1';
-      iframe.title = 'Dave Graham Live performance video';
-      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
-      iframe.referrerPolicy = 'strict-origin-when-cross-origin';
-      iframe.allowFullscreen = true;
+      iframe.contentWindow.postMessage(
+        JSON.stringify({
+          event: 'command',
+          func: 'unMute',
+          args: []
+        }),
+        'https://www.youtube-nocookie.com'
+      );
 
-      frame.replaceChildren(iframe);
+      iframe.contentWindow.postMessage(
+        JSON.stringify({
+          event: 'command',
+          func: 'playVideo',
+          args: []
+        }),
+        'https://www.youtube-nocookie.com'
+      );
+
+      document.getElementById('unmute-button').hidden = true;
     }
   </script>
 
