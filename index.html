@@ -570,13 +570,22 @@
       <p class="section-kicker">Hear it. See it. Feel it.</p>
       <h2 class="section-heading chrome-text">This Is the Show.</h2>
 
-      <div class="video-frame" id="video-frame">
+            <div class="video-frame">
+        <iframe
+          id="show-video"
+          src="https://www.youtube-nocookie.com/embed/E6fUGdEovOY?autoplay=1&amp;mute=1&amp;playsinline=1&amp;controls=1&amp;enablejsapi=1"
+          title="Dave Graham Live performance video"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
+
         <button
-          class="video-preview"
+          class="unmute-button"
+          id="unmute-button"
           type="button"
-          aria-label="Play Dave Graham Live performance video"
-          onclick="playShowVideo()">
-          <span class="play-button" aria-hidden="true">▶</span>
+          onclick="unmuteShowVideo()">
+          TURN SOUND ON
         </button>
       </div>
     </section>
