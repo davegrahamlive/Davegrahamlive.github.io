@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Meet Dave Graham Live — professional solo entertainment with full-band sound for private parties, corporate events, weddings, and live music venues throughout New Hampshire.">
-  <title>About Dave Graham Live | Live Entertainment</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Meet Dave Graham — New Hampshire solo entertainer delivering full-band sound for weddings, private parties, corporate events, and live music venues.">
+  <title>About Dave Graham | Dave Graham Live</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,7 +32,7 @@
       line-height: 1.75;
     }
 
-        /* Navigation */
+    /* NAVIGATION */
 
     .site-nav {
       position: sticky;
@@ -149,7 +149,7 @@
       margin: 0 0 18px;
     }
 
-    /* PHOTOS */
+    /* MAIN PHOTOS */
 
     .about-images-row {
       display: grid;
@@ -207,6 +207,103 @@
     }
 
     .story-panel p:last-child { margin-bottom: 0; }
+
+    /* PERFORMANCE GALLERY */
+
+    .gallery-section {
+      margin: 65px 0;
+      text-align: center;
+    }
+
+    .gallery-section h2 {
+      color: var(--yellow);
+      font-size: clamp(1.9rem, 4vw, 2.7rem);
+      margin: 0 0 12px;
+    }
+
+    .gallery-intro {
+      color: var(--muted);
+      margin: 0 auto 28px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .gallery-item {
+      display: block;
+      width: 100%;
+      padding: 6px;
+      border: 1px solid rgba(75,131,196,.55);
+      border-radius: 9px;
+      background: var(--panel);
+      cursor: pointer;
+      overflow: hidden;
+      box-shadow: 0 8px 22px rgba(0,0,0,.3);
+      transition: transform .25s, border-color .25s, box-shadow .25s;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.045);
+      border-color: var(--yellow);
+      box-shadow: 0 12px 28px rgba(0,0,0,.5);
+      position: relative;
+      z-index: 2;
+    }
+
+    .gallery-item img {
+      display: block;
+      width: 100%;
+      height: 175px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+
+    /* PHOTO VIEWER */
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      background: rgba(0,0,0,.94);
+      align-items: center;
+      justify-content: center;
+      padding: 55px 20px 25px;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox img {
+      display: block;
+      max-width: 95%;
+      max-height: 85vh;
+      object-fit: contain;
+      border: 2px solid rgba(255,255,255,.25);
+      border-radius: 5px;
+      box-shadow: 0 15px 50px rgba(0,0,0,.7);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 12px;
+      right: 22px;
+      color: white;
+      background: transparent;
+      border: none;
+      font-size: 42px;
+      line-height: 1;
+      cursor: pointer;
+      padding: 5px 12px;
+    }
+
+    .lightbox-close:hover {
+      color: var(--yellow);
+    }
 
     /* BOOKING CTA */
 
@@ -300,7 +397,7 @@
     /* MOBILE */
 
     @media (max-width: 700px) {
-            .site-nav {
+      .site-nav {
         justify-content: center;
         gap: 12px 16px;
         padding: 10px 12px;
@@ -326,12 +423,29 @@
       .story-panel { padding: 25px 22px; }
 
       .intro p { font-size: .98rem; }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .gallery-item img {
+        height: 145px;
+      }
+
+      .booking-cta {
+        padding: 32px 18px;
+      }
+
+      .cta-button {
+        font-size: 1rem;
+        padding: 13px 18px;
+      }
     }
 
     @media (max-width: 390px) {
-      .site-nav a {
-        font-size: 11px;
-        padding: 8px 8px;
+      .gallery-item img {
+        height: 120px;
       }
     }
   </style>
@@ -364,15 +478,14 @@
         I'm Dave Graham, a solo entertainer delivering the sound and energy
         of a full band without the expense or complexity of hiring one.
         With vocals, guitar, keyboards, and professionally produced backing
-        tracks, I bring a full, polished musical experience to private
-        parties, corporate events, weddings, and live music venues.
+        tracks, I bring a polished musical experience to private parties,
+        corporate events, weddings, and live music venues.
       </p>
 
       <p>
-        My approach is simple: play music people know and love, keep the
-        energy moving, and make the entertainment part of your event easy.
-        From rock, pop, and country to oldies and crowd favorites, I tailor
-        the show to the room and take requests when the moment's right.
+        I play the songs people know and love — rock, pop, country, oldies,
+        and crowd favorites. I keep the energy moving, take requests when
+        the moment's right, and make the entertainment part of your event easy.
       </p>
     </section>
 
@@ -402,29 +515,69 @@
       <h2>More Than Just Music</h2>
 
       <p>
-        Outside of music, I'm a martial arts instructor with more than
-        20 years of experience. I'm also a mail carrier by day, so
-        professionalism, reliability, and showing up ready to work
-        aren't just part of the show—they're part of who I am.
+        I'm Dave Graham — mailman, musician, karate instructor.
       </p>
 
       <p>
-        Whether I'm teaching on the mat or performing on stage, I believe
-        in preparation, commitment, and giving people an experience
-        worth remembering.
+        25 yrs teaching karate, and I've been performing music onstage since the early 90s.
       </p>
+    </section>
+
+    <section class="gallery-section">
+      <h2>A Look at the Show</h2>
+      <p class="gallery-intro">
+        A few moments from the stage.
+      </p>
+
+      <div class="gallery-grid">
+
+        <button class="gallery-item" type="button"
+          data-full="homepage-redesign-draft/assets/images/dave-arms-wide-performance.png"
+          aria-label="Enlarge performance photo">
+          <img
+            src="homepage-redesign-draft/assets/images/dave-arms-wide-performance.png"
+            alt="Dave performing live on stage">
+        </button>
+
+        <button class="gallery-item" type="button"
+          data-full="homepage-redesign-draft/assets/images/dave-nye-eagles.png"
+          aria-label="Enlarge performance photo">
+          <img
+            src="homepage-redesign-draft/assets/images/dave-nye-eagles.png"
+            alt="Dave performing for a live audience">
+        </button>
+
+        <button class="gallery-item" type="button"
+          data-full="homepage-redesign-draft/assets/images/dave-purple-light-portrait.jpeg"
+          aria-label="Enlarge performance photo">
+          <img
+            src="homepage-redesign-draft/assets/images/dave-purple-light-portrait.jpeg"
+            alt="Dave performing under purple stage lighting">
+        </button>
+
+        <button class="gallery-item" type="button"
+          data-full="homepage-redesign-draft/assets/images/clapping-hands.jpg"
+          aria-label="Enlarge audience photo">
+          <img
+            src="homepage-redesign-draft/assets/images/clapping-hands.jpg"
+            alt="Audience members applauding during a live performance">
+        </button>
+
+      </div>
     </section>
 
     <section class="booking-cta">
       <h2 class="chrome-text">Let's Make Your Event a Good One.</h2>
 
       <p>
-        Planning a private celebration, corporate event, wedding, or
-        looking for live entertainment at your venue? Let's talk about
-        making it a great night.
+        Planning a private celebration, corporate event, wedding, or looking
+        for live entertainment at your venue? Get in touch and let's talk
+        about making it a great event.
       </p>
 
-      <a class="cta-button" href="contact.html">Get in Touch</a>
+      <a class="cta-button" href="contact.html">
+        Check Availability &amp; Get a Quote
+      </a>
     </section>
 
   </main>
@@ -496,8 +649,48 @@
 
   </footer>
 
-</body>
-</html>
+  <!-- PHOTO VIEWER -->
+  <div class="lightbox" id="photoLightbox" aria-hidden="true">
+    <button class="lightbox-close" type="button" aria-label="Close photo">&times;</button>
+    <img id="lightboxImage" src="" alt="Enlarged performance photo">
+  </div>
+
+  <script>
+    const lightbox = document.getElementById('photoLightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const closeButton = document.querySelector('.lightbox-close');
+
+    document.querySelectorAll('.gallery-item').forEach(button => {
+      button.addEventListener('click', () => {
+        lightboxImage.src = button.dataset.full;
+        lightboxImage.alt = button.querySelector('img').alt;
+        lightbox.classList.add('open');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      lightboxImage.src = '';
+      document.body.style.overflow = '';
+    }
+
+    closeButton.addEventListener('click', closeLightbox);
+
+    lightbox.addEventListener('click', event => {
+      if (event.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && lightbox.classList.contains('open')) {
+        closeLightbox();
+      }
+    });
+  </script>
 
 </body>
 </html>
