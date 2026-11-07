@@ -149,48 +149,13 @@
       margin: 0 0 18px;
     }
 
-    /* MAIN PHOTOS */
-
-    .about-images-row {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 24px;
-      margin: 45px 0 60px;
-    }
-
-    .about-images-row figure {
-      margin: 0;
-      background: var(--panel);
-      padding: 9px;
-      border: 1px solid rgba(75, 131, 196, .55);
-      border-radius: 10px;
-      box-shadow: 0 12px 30px rgba(0,0,0,.4);
-      overflow: hidden;
-    }
-
-    .about-images-row img {
-      display: block;
-      width: 100%;
-      height: 310px;
-      object-fit: cover;
-      border-radius: 5px;
-    }
-
-    .about-images-row figcaption {
-      color: var(--muted);
-      font-size: .78rem;
-      text-align: center;
-      padding: 12px 6px 5px;
-      line-height: 1.5;
-    }
-
     /* PERSONAL STORY */
 
     .story-panel {
       background: linear-gradient(135deg, #182131, #10141c);
       border-left: 4px solid var(--yellow);
       padding: 30px 34px;
-      margin: 50px 0;
+      margin: 50px 0 35px;
       border-radius: 0 10px 10px 0;
       box-shadow: 0 10px 28px rgba(0,0,0,.25);
     }
@@ -207,6 +172,50 @@
     }
 
     .story-panel p:last-child { margin-bottom: 0; }
+
+    /* FEATURED PERFORMANCE PHOTO */
+
+    .featured-performance {
+      margin: 35px 0 65px;
+      padding: 9px;
+      background: var(--panel);
+      border: 1px solid rgba(75,131,196,.65);
+      border-radius: 10px;
+      box-shadow: 0 14px 35px rgba(0,0,0,.45);
+      overflow: hidden;
+    }
+
+    .featured-performance button {
+      display: block;
+      width: 100%;
+      padding: 0;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      overflow: hidden;
+      border-radius: 5px;
+    }
+
+    .featured-performance img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 560px;
+      object-fit: cover;
+      object-position: center;
+      transition: transform .35s;
+    }
+
+    .featured-performance button:hover img {
+      transform: scale(1.025);
+    }
+
+    .featured-performance figcaption {
+      color: var(--muted);
+      font-size: .85rem;
+      text-align: center;
+      padding: 13px 8px 5px;
+    }
 
     /* PERFORMANCE GALLERY */
 
@@ -410,19 +419,17 @@
 
       .page-header { padding-top: 38px; }
 
-      .about-images-row {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
-
-      .about-images-row img {
-        height: auto;
-        max-height: 380px;
-      }
-
       .story-panel { padding: 25px 22px; }
 
       .intro p { font-size: .98rem; }
+
+      .featured-performance {
+        margin: 30px 0 50px;
+      }
+
+      .featured-performance img {
+        max-height: 380px;
+      }
 
       .gallery-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -489,28 +496,6 @@
       </p>
     </section>
 
-    <div class="about-images-row">
-
-      <figure>
-        <img
-          src="hilltopshot.png"
-          alt="Dave Graham Live performance setup featuring keyboards, guitar, lighting, and professional equipment">
-        <figcaption>
-          A professional, full-band sound from a streamlined solo setup.
-        </figcaption>
-      </figure>
-
-      <figure>
-        <img
-          src="fullrigatHilltop.png"
-          alt="Dave performing live at his keyboard with stage lighting and sound equipment">
-        <figcaption>
-          Live performance, with the sound and energy to fill the room.
-        </figcaption>
-      </figure>
-
-    </div>
-
     <section class="story-panel">
       <h2>More Than Just Music</h2>
 
@@ -523,6 +508,24 @@
       </p>
     </section>
 
+    <!-- FEATURED PERFORMANCE PHOTO -->
+
+    <figure class="featured-performance">
+      <button type="button"
+        class="featured-photo-button"
+        data-full="homepage-redesign-draft/assets/images/dave-arms-wide-performance.png"
+        aria-label="Enlarge Dave's featured performance photo">
+        <img
+          src="homepage-redesign-draft/assets/images/dave-arms-wide-performance.png"
+          alt="Dave Graham performing live on stage with arms outstretched">
+      </button>
+      <figcaption>
+        Bringing the energy, the music, and the crowd into the show.
+      </figcaption>
+    </figure>
+
+    <!-- PERFORMANCE GALLERY -->
+
     <section class="gallery-section">
       <h2>A Look at the Show</h2>
       <p class="gallery-intro">
@@ -532,11 +535,17 @@
       <div class="gallery-grid">
 
         <button class="gallery-item" type="button"
-          data-full="homepage-redesign-draft/assets/images/dave-arms-wide-performance.png"
+          data-full="hilltopshot.png"
           aria-label="Enlarge performance photo">
-          <img
-            src="homepage-redesign-draft/assets/images/dave-arms-wide-performance.png"
-            alt="Dave performing live on stage">
+          <img src="hilltopshot.png"
+            alt="Dave Graham Live performance setup">
+        </button>
+
+        <button class="gallery-item" type="button"
+          data-full="fullrigatHilltop.png"
+          aria-label="Enlarge performance photo">
+          <img src="fullrigatHilltop.png"
+            alt="Dave performing at his keyboard with stage lighting">
         </button>
 
         <button class="gallery-item" type="button"
@@ -565,6 +574,8 @@
 
       </div>
     </section>
+
+    <!-- BOOKING CTA -->
 
     <section class="booking-cta">
       <h2 class="chrome-text">Let's Make Your Event a Good One.</h2>
@@ -650,6 +661,7 @@
   </footer>
 
   <!-- PHOTO VIEWER -->
+
   <div class="lightbox" id="photoLightbox" aria-hidden="true">
     <button class="lightbox-close" type="button" aria-label="Close photo">&times;</button>
     <img id="lightboxImage" src="" alt="Enlarged performance photo">
@@ -660,10 +672,13 @@
     const lightboxImage = document.getElementById('lightboxImage');
     const closeButton = document.querySelector('.lightbox-close');
 
-    document.querySelectorAll('.gallery-item').forEach(button => {
+    document.querySelectorAll('[data-full]').forEach(button => {
       button.addEventListener('click', () => {
         lightboxImage.src = button.dataset.full;
-        lightboxImage.alt = button.querySelector('img').alt;
+
+        const thumbnail = button.querySelector('img');
+        lightboxImage.alt = thumbnail ? thumbnail.alt : 'Enlarged performance photo';
+
         lightbox.classList.add('open');
         lightbox.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
