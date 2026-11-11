@@ -495,16 +495,33 @@
 /* SHAPE 4 — BRUSHSTROKE */
 
 .sticker-brush {
-  background: var(--yellow);
+  position: relative;
+  isolation: isolate;
+  background: transparent;
   color: #090b10;
-  border-radius: 8px 22px 9px 18px / 18px 8px 20px 12px;
+  border-radius: 0;
   transform: rotate(-1.8deg);
+}
+
+.sticker-brush::before {
+  content: "";
+  position: absolute;
+  inset: 0 -8px;
+  z-index: -1;
+  background: var(--yellow);
+  clip-path: polygon(
+    2% 18%, 13% 10%, 28% 14%, 42% 5%,
+    58% 12%, 73% 6%, 87% 13%, 99% 8%,
+    96% 30%, 100% 48%, 95% 65%,
+    98% 84%, 82% 91%, 66% 85%,
+    49% 96%, 33% 88%, 17% 93%,
+    5% 82%, 0% 62%, 4% 40%
+  );
 }
 
 .sticker-brush .sticker-stars {
   color: #090b10;
 }
-
 /* SHAPE 5 — DARK BRAND STICKER */
 
 .sticker-brand {
