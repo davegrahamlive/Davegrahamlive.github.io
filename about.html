@@ -403,6 +403,148 @@
       text-decoration: none;
     }
 
+/* REVIEW STICKERS */
+
+.review-stickers {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+  margin: 55px auto 65px;
+  align-items: center;
+}
+
+.review-sticker {
+  position: relative;
+  box-sizing: border-box;
+  padding: 25px 28px;
+  box-shadow: 4px 9px 20px rgba(0,0,0,.4);
+  transition: transform .25s ease;
+}
+
+.review-sticker:hover {
+  transform: rotate(0deg) translateY(-4px);
+  z-index: 2;
+}
+
+.sticker-stars {
+  color: #d9b000;
+  letter-spacing: 4px;
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+}
+
+.sticker-heading {
+  font-family: 'Anton', sans-serif;
+  font-size: 1.45rem;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.sticker-quote {
+  font-size: .94rem;
+  line-height: 1.6;
+  margin: 0 0 14px;
+}
+
+.sticker-author {
+  font-weight: 800;
+  font-size: .88rem;
+}
+
+.sticker-source {
+  display: block;
+  font-size: .72rem;
+  opacity: .75;
+  margin-top: 3px;
+}
+
+/* SHAPE 1 — ROUNDED RECTANGLE */
+
+.sticker-rounded {
+  background: #141820;
+  color: #f5f5f5;
+  border: 2px solid var(--yellow);
+  border-radius: 22px;
+  transform: rotate(-1.5deg);
+}
+
+.sticker-rounded .sticker-heading {
+  color: var(--yellow);
+}
+
+/* SHAPE 3 — VINTAGE TICKET */
+
+.sticker-ticket {
+  background:
+    radial-gradient(circle at 0 50%, var(--dark) 0 9px, transparent 9.5px),
+    radial-gradient(circle at 100% 50%, var(--dark) 0 9px, transparent 9.5px),
+    #f4ecd9;
+  color: #171717;
+  border: 2px solid #d2b96a;
+  border-radius: 13px;
+  outline: 1px solid #f4ecd9;
+  transform: rotate(1.5deg);
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.sticker-ticket .sticker-heading {
+  color: #806000;
+}
+
+/* SHAPE 4 — BRUSHSTROKE */
+
+.sticker-brush {
+  background: var(--yellow);
+  color: #090b10;
+  border-radius: 8px 22px 9px 18px / 18px 8px 20px 12px;
+  transform: rotate(-1.8deg);
+}
+
+.sticker-brush .sticker-stars {
+  color: #090b10;
+}
+
+/* SHAPE 5 — DARK BRAND STICKER */
+
+.sticker-brand {
+  background: #141820;
+  color: #fff;
+  border: 2px solid var(--yellow);
+  border-radius: 35px 12px 35px 12px;
+  text-align: center;
+  transform: rotate(1.7deg);
+  padding: 30px 25px;
+}
+
+.sticker-brand strong {
+  display: block;
+  color: var(--yellow);
+  font-family: 'Anton', sans-serif;
+  font-size: 1.7rem;
+  line-height: 1.2;
+}
+
+/* MOBILE STICKERS */
+
+@media (max-width: 700px) {
+  .review-stickers {
+    grid-template-columns: 1fr;
+    gap: 26px;
+    margin: 40px auto 50px;
+    padding: 0 8px;
+  }
+
+  .review-sticker {
+    width: 100%;
+    padding: 22px;
+  }
+
+  .sticker-heading {
+    font-size: 1.3rem;
+  }
+}
+
     /* MOBILE */
 
     @media (max-width: 700px) {
@@ -507,6 +649,62 @@
         25 yrs teaching karate, and I've been performing music onstage since the early 90s.
       </p>
     </section>
+    
+<!-- CUSTOMER REVIEW STICKERS -->
+
+<section class="review-stickers" aria-label="Customer reviews">
+
+  <!-- SHAPE 1: DONNA — ROUNDED RECTANGLE -->
+
+  <article class="review-sticker sticker-rounded">
+    <div class="sticker-stars">★★★★★</div>
+    <div class="sticker-heading">SUCH A FUN SHOW!</div>
+    <p class="sticker-quote">
+      “Dave has great energy, an extensive playlist,
+      and really knows how to get the crowd involved!”
+    </p>
+    <div class="sticker-author">— Donna Baker</div>
+    <span class="sticker-source">Google Review</span>
+  </article>
+
+  <!-- SHAPE 3: JAY — VINTAGE TICKET -->
+
+  <article class="review-sticker sticker-ticket">
+    <div class="sticker-heading">A PARTY TO REMEMBER</div>
+    <p class="sticker-quote">
+      “Our friends and most importantly my wife
+      had a blast!”
+    </p>
+    <div class="sticker-author">— Jay Ash</div>
+    <span class="sticker-source">Facebook Review · September 2021</span>
+  </article>
+
+  <!-- SHAPE 4: DEBBIE — BRUSHSTROKE -->
+
+  <article class="review-sticker sticker-brush">
+    <div class="sticker-stars">★★★★★</div>
+    <div class="sticker-heading">NEVER DISAPPOINTS!</div>
+    <p class="sticker-quote">
+      “Dave always puts on a great show!!!
+      Never disappoints!!!”
+    </p>
+    <div class="sticker-author">— Debbie Mousseau</div>
+    <span class="sticker-source">Google Review</span>
+  </article>
+
+  <!-- SHAPE 5: BRAND STICKER -->
+
+  <article class="review-sticker sticker-brand">
+    <strong>CREATING FUN TIMES</strong>
+    <p class="sticker-quote">
+      Great music. Familiar favorites.
+      Full-band sound from one performer.
+    </p>
+    <div class="sticker-author">DAVE GRAHAM LIVE</div>
+  </article>
+
+</section>
+
 
     <!-- FEATURED PERFORMANCE PHOTO -->
 
