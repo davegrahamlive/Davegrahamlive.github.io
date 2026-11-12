@@ -230,14 +230,18 @@
 
     @media (max-width: 650px) {
       .site-nav {
-        gap: 1px;
-        padding: 6px;
-      }
+  gap: 1px;
+  padding: 6px;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
 
-      .site-nav a {
-        font-size: .68rem;
-        padding: 8px 9px;
-      }
+.site-nav a {
+  font-size: .62rem;
+  padding: 8px 5px;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
 
       .page-header {
         padding-top: 28px;
