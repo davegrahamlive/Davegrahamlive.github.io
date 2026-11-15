@@ -8,7 +8,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bangers&family=Bowlby+One&family=Caveat+Brush&family=Chewy&family=Gochi+Hand&family=Lobster&family=Montserrat:wght@400;500;600;700;800&family=Pacifico&family=Permanent+Marker&family=Special+Elite&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -21,7 +21,6 @@
     }
 
     * { box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -30,589 +29,116 @@
       color: var(--white);
       font-family: 'Montserrat', sans-serif;
       line-height: 1.75;
+      overflow-x: hidden;
     }
 
     /* NAVIGATION */
-
-    .site-nav {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      width: 100%;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-      gap: 22px;
-      padding: 12px max(calc((100% - 1150px) / 2), 24px);
-      background: rgba(9,10,16,.97);
-      border-bottom: 2px solid var(--blue);
-      box-shadow: 0 4px 18px rgba(0,0,0,.4);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-    }
-
-    .site-nav a {
-      display: block;
-      padding: 10px 0;
-      color: #e8e8f1;
-      text-decoration: none;
-      text-transform: uppercase;
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 1px;
-      white-space: nowrap;
-      transition: color .2s;
-    }
-
-    .site-nav a:hover,
-    .site-nav a[aria-current="page"] {
-      color: var(--yellow);
-    }
+    .site-nav { position: sticky; top: 0; z-index: 1000; width: 100%; display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 22px; padding: 12px max(calc((100% - 1150px) / 2), 24px); background: rgba(9,10,16,.97); border-bottom: 2px solid var(--blue); box-shadow: 0 4px 18px rgba(0,0,0,.4); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+    .site-nav a { display: block; padding: 10px 0; color: #e8e8f1; text-decoration: none; text-transform: uppercase; font-size: 12px; font-weight: 800; letter-spacing: 1px; white-space: nowrap; transition: color .2s; }
+    .site-nav a:hover, .site-nav a[aria-current="page"] { color: var(--yellow); }
 
     /* PAGE HEADER */
-
-    .page-header {
-      text-align: center;
-      padding: 55px 20px 25px;
-    }
-
-    .page-header img {
-      display: block;
-      width: min(240px, 65vw);
-      height: auto;
-      margin: 0 auto 28px;
-    }
-
-    .eyebrow {
-      color: var(--yellow);
-      font-size: .8rem;
-      font-weight: 800;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-
-    h1, h2, h3 {
-      font-family: 'Anton', sans-serif;
-      font-style: italic;
-      text-transform: uppercase;
-      line-height: 1.12;
-      letter-spacing: .5px;
-    }
-
-    h1 {
-      font-size: clamp(2.8rem, 7vw, 5.2rem);
-      margin: 0;
-    }
+    .page-header { text-align: center; padding: 55px 20px 25px; }
+    .page-header img { display: block; width: min(240px, 65vw); height: auto; margin: 0 auto 28px; }
+    .eyebrow { color: var(--yellow); font-size: .8rem; font-weight: 800; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 8px; }
+    h1, h2, h3 { font-family: 'Anton', sans-serif; font-style: italic; text-transform: uppercase; line-height: 1.12; letter-spacing: .5px; }
+    h1 { font-size: clamp(2.8rem, 7vw, 5.2rem); margin: 0; }
 
     /* LEMON-YELLOW GRADIENT HEADINGS */
-
-    .chrome-text {
-      color: #fff000;
-      background: linear-gradient(
-        180deg,
-        #ffffa0 0%,
-        #fff000 35%,
-        #ffe600 65%,
-        #fff95c 100%
-      );
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      filter: drop-shadow(1px 2px 2px rgba(0,0,0,.7));
-    }
-
-    .header-subtitle {
-      max-width: 700px;
-      margin: 18px auto 0;
-      color: var(--muted);
-      font-size: 1rem;
-    }
+    .chrome-text { color: #fff000; background: linear-gradient(180deg, #ffffa0 0%, #fff000 35%, #ffe600 65%, #fff95c 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(1px 2px 2px rgba(0,0,0,.7)); }
+    .header-subtitle { max-width: 700px; margin: 18px auto 0; color: var(--muted); font-size: 1rem; }
 
     /* MAIN CONTENT */
-
-    main {
-      width: min(100% - 40px, 1000px);
-      margin: 0 auto;
-      padding-bottom: 65px;
-    }
-
-    .intro {
-      text-align: center;
-      max-width: 850px;
-      margin: 20px auto 45px;
-    }
-
-    .intro p {
-      font-size: 1.05rem;
-      color: #d3d7df;
-      margin: 0 0 18px;
-    }
+    main { width: min(100% - 40px, 1000px); margin: 0 auto; padding-bottom: 65px; }
+    .intro { text-align: center; max-width: 850px; margin: 20px auto 45px; }
+    .intro p { font-size: 1.05rem; color: #d3d7df; margin: 0 0 18px; }
 
     /* PERSONAL STORY */
-
-    .story-panel {
-      background: linear-gradient(135deg, #182131, #10141c);
-      border-left: 4px solid var(--yellow);
-      padding: 30px 34px;
-      margin: 50px 0 35px;
-      border-radius: 0 10px 10px 0;
-      box-shadow: 0 10px 28px rgba(0,0,0,.25);
-    }
-
-    .story-panel h2 {
-      color: var(--yellow);
-      font-size: clamp(1.8rem, 4vw, 2.6rem);
-      margin: 0 0 18px;
-    }
-
-    .story-panel p {
-      color: #d3d7df;
-      margin: 0 0 15px;
-    }
-
+    .story-panel { background: linear-gradient(135deg, #182131, #10141c); border-left: 4px solid var(--yellow); padding: 30px 34px; margin: 50px 0 35px; border-radius: 0 10px 10px 0; box-shadow: 0 10px 28px rgba(0,0,0,.25); }
+    .story-panel h2 { color: var(--yellow); font-size: clamp(1.8rem, 4vw, 2.6rem); margin: 0 0 18px; }
+    .story-panel p { color: #d3d7df; margin: 0 0 15px; }
     .story-panel p:last-child { margin-bottom: 0; }
 
     /* FEATURED PERFORMANCE PHOTO */
-
-    .featured-performance {
-      margin: 35px 0 65px;
-      padding: 9px;
-      background: var(--panel);
-      border: 1px solid rgba(75,131,196,.65);
-      border-radius: 10px;
-      box-shadow: 0 14px 35px rgba(0,0,0,.45);
-      overflow: hidden;
-    }
-
-    .featured-performance button {
-      display: block;
-      width: 100%;
-      padding: 0;
-      border: none;
-      background: transparent;
-      cursor: pointer;
-      overflow: hidden;
-      border-radius: 5px;
-    }
-
-   .featured-performance img {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-height: 560px;
-  object-fit: contain;
-  object-position: center;
-  transition: transform .35s;
-}
-
-    .featured-performance button:hover img {
-      transform: scale(1.025);
-    }
-
-    .featured-performance figcaption {
-      color: var(--muted);
-      font-size: .85rem;
-      text-align: center;
-      padding: 13px 8px 5px;
-    }
+    .featured-performance { margin: 35px 0 65px; padding: 9px; background: var(--panel); border: 1px solid rgba(75,131,196,.65); border-radius: 10px; box-shadow: 0 14px 35px rgba(0,0,0,.45); overflow: visible; position: relative; }
+    .featured-performance button { display: block; width: 100%; padding: 0; border: none; background: transparent; cursor: pointer; overflow: hidden; border-radius: 5px; }
+    .featured-performance img { display: block; width: 100%; height: auto; max-height: 560px; object-fit: contain; object-position: center; transition: transform .35s; }
+    .featured-performance button:hover img { transform: scale(1.025); }
+    .featured-performance figcaption { color: var(--muted); font-size: .85rem; text-align: center; padding: 13px 8px 5px; }
 
     /* PERFORMANCE GALLERY */
-
-    .gallery-section {
-      margin: 65px 0;
-      text-align: center;
-    }
-
-    .gallery-section h2 {
-      color: var(--yellow);
-      font-size: clamp(1.9rem, 4vw, 2.7rem);
-      margin: 0 0 12px;
-    }
-
-    .gallery-intro {
-      color: var(--muted);
-      margin: 0 auto 28px;
-    }
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 16px;
-    }
-
-    .gallery-item {
-      display: block;
-      width: 100%;
-      padding: 6px;
-      border: 1px solid rgba(75,131,196,.55);
-      border-radius: 9px;
-      background: var(--panel);
-      cursor: pointer;
-      overflow: hidden;
-      box-shadow: 0 8px 22px rgba(0,0,0,.3);
-      transition: transform .25s, border-color .25s, box-shadow .25s;
-    }
-
-    .gallery-item:hover {
-      transform: scale(1.045);
-      border-color: var(--yellow);
-      box-shadow: 0 12px 28px rgba(0,0,0,.5);
-      position: relative;
-      z-index: 2;
-    }
-
-    .gallery-item img {
-      display: block;
-      width: 100%;
-      height: 175px;
-      object-fit: cover;
-      border-radius: 5px;
-    }
+    .gallery-section { margin: 65px 0; text-align: center; }
+    .gallery-section h2 { color: var(--yellow); font-size: clamp(1.9rem, 4vw, 2.7rem); margin: 0 0 12px; }
+    .gallery-intro { color: var(--muted); margin: 0 auto 28px; }
+    .gallery-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 56px 30px; }
+    .cell { position: relative; }
+    .gallery-item { display: block; width: 100%; padding: 6px; border: 1px solid rgba(75,131,196,.55); border-radius: 9px; background: var(--panel); cursor: pointer; overflow: hidden; box-shadow: 0 8px 22px rgba(0,0,0,.3); transition: transform .25s, border-color .25s, box-shadow .25s; }
+    .gallery-item:hover { transform: scale(1.045); border-color: var(--yellow); box-shadow: 0 12px 28px rgba(0,0,0,.5); position: relative; z-index: 2; }
+    .gallery-item img { display: block; width: 100%; height: 280px; object-fit: cover; border-radius: 5px; }
 
     /* PHOTO VIEWER */
-
-    .lightbox {
-      display: none;
-      position: fixed;
-      inset: 0;
-      z-index: 2000;
-      background: rgba(0,0,0,.94);
-      align-items: center;
-      justify-content: center;
-      padding: 55px 20px 25px;
-    }
-
-    .lightbox.open {
-      display: flex;
-    }
-
-    .lightbox img {
-      display: block;
-      max-width: 95%;
-      max-height: 85vh;
-      object-fit: contain;
-      border: 2px solid rgba(255,255,255,.25);
-      border-radius: 5px;
-      box-shadow: 0 15px 50px rgba(0,0,0,.7);
-    }
-
-    .lightbox-close {
-      position: absolute;
-      top: 12px;
-      right: 22px;
-      color: white;
-      background: transparent;
-      border: none;
-      font-size: 42px;
-      line-height: 1;
-      cursor: pointer;
-      padding: 5px 12px;
-    }
-
-    .lightbox-close:hover {
-      color: var(--yellow);
-    }
+    .lightbox { display: none; position: fixed; inset: 0; z-index: 2000; background: rgba(0,0,0,.94); align-items: center; justify-content: center; padding: 55px 20px 25px; }
+    .lightbox.open { display: flex; }
+    .lightbox img { display: block; max-width: 95%; max-height: 85vh; object-fit: contain; border: 2px solid rgba(255,255,255,.25); border-radius: 5px; box-shadow: 0 15px 50px rgba(0,0,0,.7); }
+    .lightbox-close { position: absolute; top: 12px; right: 22px; color: white; background: transparent; border: none; font-size: 42px; line-height: 1; cursor: pointer; padding: 5px 12px; }
+    .lightbox-close:hover { color: var(--yellow); }
 
     /* BOOKING CTA */
-
-    .booking-cta {
-      text-align: center;
-      margin: 65px 0 20px;
-      padding: 40px 25px;
-      background: linear-gradient(135deg, rgba(30,48,72,.95), rgba(13,17,25,.98));
-      border: 1px solid rgba(75,131,196,.65);
-      border-radius: 12px;
-      box-shadow: 0 12px 35px rgba(0,0,0,.35);
-    }
-
-    .booking-cta h2 {
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      margin: 0 0 15px;
-    }
-
-    .booking-cta p {
-      max-width: 650px;
-      margin: 0 auto 25px;
-      color: var(--muted);
-    }
-
-    .cta-button {
-      display: inline-block;
-      background: var(--yellow);
-      color: #090b10;
-      padding: 14px 28px;
-      border-radius: 5px;
-      font-family: 'Anton', sans-serif;
-      font-size: 1.2rem;
-      letter-spacing: 1px;
-      text-decoration: none;
-      text-transform: uppercase;
-      box-shadow: 0 4px 0 #a99f00;
-      transition: transform .2s, filter .2s;
-    }
-
-    .cta-button:hover {
-      transform: translateY(-2px);
-      filter: brightness(1.1);
-    }
+    .booking-cta { text-align: center; margin: 65px 0 20px; padding: 40px 25px; background: linear-gradient(135deg, rgba(30,48,72,.95), rgba(13,17,25,.98)); border: 1px solid rgba(75,131,196,.65); border-radius: 12px; box-shadow: 0 12px 35px rgba(0,0,0,.35); }
+    .booking-cta h2 { font-size: clamp(2rem, 5vw, 3.2rem); margin: 0 0 15px; }
+    .booking-cta p { max-width: 650px; margin: 0 auto 25px; color: var(--muted); }
+    .cta-button { display: inline-block; background: var(--yellow); color: #090b10; padding: 14px 28px; border-radius: 5px; font-family: 'Anton', sans-serif; font-size: 1.2rem; letter-spacing: 1px; text-decoration: none; text-transform: uppercase; box-shadow: 0 4px 0 #a99f00; transition: transform .2s, filter .2s; }
+    .cta-button:hover { transform: translateY(-2px); filter: brightness(1.1); }
 
     /* FOOTER */
+    footer { background: #080a0e; border-top: 1px solid rgba(75,131,196,.4); padding: 30px 20px 22px; text-align: center; color: #999; font-size: .85rem; }
+    .footer-social-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-bottom: 18px; }
+    .social-link { display: flex; align-items: center; justify-content: center; width: 42px; height: 42px; border: 1px solid #3b4655; border-radius: 8px; background: #151b25; transition: border-color .2s, transform .2s; }
+    .social-link:hover { border-color: var(--yellow); transform: translateY(-2px); }
+    .social-link svg { width: 30px; height: 30px; }
+    footer a { color: var(--yellow); text-decoration: none; }
 
-    footer {
-      background: #080a0e;
-      border-top: 1px solid rgba(75,131,196,.4);
-      padding: 30px 20px 22px;
-      text-align: center;
-      color: #999;
-      font-size: .85rem;
-    }
-
-    .footer-social-row {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 18px;
-    }
-
-    .social-link {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 42px;
-      height: 42px;
-      border: 1px solid #3b4655;
-      border-radius: 8px;
-      background: #151b25;
-      transition: border-color .2s, transform .2s;
-    }
-
-    .social-link:hover {
-      border-color: var(--yellow);
-      transform: translateY(-2px);
-    }
-
-    .social-link svg {
-      width: 30px;
-      height: 30px;
-    }
-
-    footer a {
-      color: var(--yellow);
-      text-decoration: none;
-    }
-
-/* REVIEW STICKERS */
-
-.review-stickers {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 32px;
-  margin: 55px auto 65px;
-  align-items: center;
-}
-
-.review-sticker {
-  position: relative;
-  box-sizing: border-box;
-  padding: 25px 28px;
-  box-shadow: 4px 9px 20px rgba(0,0,0,.4);
-  transition: transform .25s ease;
-}
-
-.review-sticker:hover {
-  transform: rotate(0deg) translateY(-4px);
-  z-index: 2;
-}
-
-.sticker-stars {
-  color: #d9b000;
-  letter-spacing: 4px;
-  font-size: 1.15rem;
-  margin-bottom: 8px;
-}
-
-.sticker-heading {
-  font-family: 'Anton', sans-serif;
-  font-size: 1.45rem;
-  line-height: 1.2;
-  margin-bottom: 12px;
-}
-
-.sticker-quote {
-  font-size: .94rem;
-  line-height: 1.6;
-  margin: 0 0 14px;
-}
-
-.sticker-author {
-  font-weight: 800;
-  font-size: .88rem;
-}
-
-.sticker-source {
-  display: block;
-  font-size: .72rem;
-  opacity: .75;
-  margin-top: 3px;
-}
-
-/* SHAPE 1 — ROUNDED RECTANGLE */
-
-.sticker-rounded {
-  background: #141820;
-  color: #f5f5f5;
-  border: 2px solid var(--yellow);
-  border-radius: 22px;
-  transform: rotate(-1.5deg);
-}
-
-.sticker-rounded .sticker-heading {
-  color: var(--yellow);
-}
-
-/* SHAPE 3 — VINTAGE TICKET */
-
-.sticker-ticket {
-  background:
-    radial-gradient(circle at 0 50%, var(--dark) 0 9px, transparent 9.5px),
-    radial-gradient(circle at 100% 50%, var(--dark) 0 9px, transparent 9.5px),
-    #f4ecd9;
-  color: #171717;
-  border: 2px solid #d2b96a;
-  border-radius: 13px;
-  outline: 1px solid #f4ecd9;
-  transform: rotate(1.5deg);
-  padding-left: 32px;
-  padding-right: 32px;
-}
-
-.sticker-ticket .sticker-heading {
-  color: #806000;
-}
-
-/* SHAPE 4 — BRUSHSTROKE */
-
-.sticker-brush {
-  position: relative;
-  isolation: isolate;
-  background: transparent;
-  color: #090b10;
-  border-radius: 0;
-  transform: rotate(-1.8deg);
-}
-
-.sticker-brush::before {
-  content: "";
-  position: absolute;
-  inset: 0 -8px;
-  z-index: -1;
-  background: var(--yellow);
-  clip-path: polygon(
-    2% 18%, 13% 10%, 28% 14%, 42% 5%,
-    58% 12%, 73% 6%, 87% 13%, 99% 8%,
-    96% 30%, 100% 48%, 95% 65%,
-    98% 84%, 82% 91%, 66% 85%,
-    49% 96%, 33% 88%, 17% 93%,
-    5% 82%, 0% 62%, 4% 40%
-  );
-}
-
-.sticker-brush .sticker-stars {
-  color: #090b10;
-}
-/* SHAPE 5 — DARK BRAND STICKER */
-
-.sticker-brand {
-  background: #141820;
-  color: #fff;
-  border: 2px solid var(--yellow);
-  border-radius: 35px 12px 35px 12px;
-  text-align: center;
-  transform: rotate(1.7deg);
-  padding: 30px 25px;
-}
-
-.sticker-brand strong {
-  display: block;
-  color: var(--yellow);
-  font-family: 'Anton', sans-serif;
-  font-size: 1.7rem;
-  line-height: 1.2;
-}
-
-/* MOBILE STICKERS */
-
-@media (max-width: 700px) {
-  .review-stickers {
-    grid-template-columns: 1fr;
-    gap: 26px;
-    margin: 40px auto 50px;
-    padding: 0 8px;
-  }
-
-  .review-sticker {
-    width: 100%;
-    padding: 22px;
-  }
-
-  .sticker-heading {
-    font-size: 1.3rem;
-  }
-}
+    /* REVIEW STICKERS */
+    .rv { --k: 1; position: absolute; z-index: 3; width: calc(var(--w) * 1px * var(--k)); transform: rotate(var(--r)); filter: drop-shadow(2px 5px 5px rgba(0,0,0,.55)); transition: transform .25s; text-align: center; line-height: 1.3; }
+    .rv:hover { transform: rotate(0) scale(1.07); z-index: 8; }
+    .rv-b { position: relative; background: var(--bg); color: var(--fg); padding: 14px 16px; font-family: var(--f), cursive, sans-serif; font-size: calc(.84rem * var(--fs, 1) * (.7 + .3 * var(--k))); line-height: 1.3; font-weight: 500; }
+    .rv-s { display: block; color: var(--st); letter-spacing: 2px; font-size: 1rem; }
+    .rv-q { display: block; margin: 4px 0; }
+    .rv-n { display: block; font-size: 1.1em; }
+    .rv-g { display: block; font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: .62rem; opacity: .8; margin-top: 2px; }
+    .rv-circle .rv-b { aspect-ratio: 1; border-radius: 50%; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 22px; }
+    .rv-rect .rv-b { border: 5px solid #fff; }
+    .rv-banner .rv-b { clip-path: polygon(0 0,100% 0,95% 50%,100% 100%,0 100%,5% 50%); padding: 16px 38px; }
+    .rv-ribbon::before, .rv-ribbon::after { content: ''; position: absolute; top: 14px; bottom: -14px; width: 44px; background: var(--bg2); z-index: -1; }
+    .rv-ribbon::before { left: -20px; clip-path: polygon(0 0,100% 0,100% 100%,0 100%,28% 50%); }
+    .rv-ribbon::after { right: -20px; clip-path: polygon(0 0,100% 0,72% 50%,100% 100%,0 100%); }
+    .rv-ribbon .rv-b { padding: 16px 24px; }
+    .rv-brush .rv-b { background: none; padding: 30px 40px; }
+    .rv-brush svg { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -1; overflow: visible; }
+    .rv-brush .rv-b > * { position: relative; }
+    .rv-star .rv-b { aspect-ratio: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 34px; clip-path: var(--clip); }
+    .rv-bubble .rv-b { border-radius: 20px; }
+    .rv-bubble .rv-b::after { content: ''; position: absolute; bottom: -12px; left: 30px; border: 12px solid transparent; border-top-color: var(--bg); border-bottom: 0; }
+    .rv-hex .rv-b { aspect-ratio: 1.1; clip-path: polygon(25% 4%,75% 4%,100% 50%,75% 96%,25% 96%,0 50%); display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px 40px; }
+    .rv-ticket .rv-b { border-radius: 6px; padding: 14px 28px; -webkit-mask: radial-gradient(circle 9px at 0 50%,#0000 97%,#000) left/51% 100% no-repeat, radial-gradient(circle 9px at 100% 50%,#0000 97%,#000) right/51% 100% no-repeat; mask: radial-gradient(circle 9px at 0 50%,#0000 97%,#000) left/51% 100% no-repeat, radial-gradient(circle 9px at 100% 50%,#0000 97%,#000) right/51% 100% no-repeat; }
+    .rv-pill .rv-b { border-radius: 999px; padding: 14px 30px; }
+    .rv-tag .rv-b { clip-path: polygon(0 0,88% 0,100% 50%,88% 100%,0 100%); padding: 14px 44px 14px 18px; }
+    .rv-circle .rv-g, .rv-star .rv-g, .rv-hex .rv-g { display: none; }
 
     /* MOBILE */
-
     @media (max-width: 700px) {
-      .site-nav {
-        justify-content: center;
-        gap: 12px 16px;
-        padding: 10px 12px;
-      }
-
-      .site-nav a {
-        padding: 6px 0;
-        font-size: 10px;
-      }
-
+      .site-nav { justify-content: center; gap: 12px 16px; padding: 10px 12px; }
+      .site-nav a { padding: 6px 0; font-size: 10px; }
       .page-header { padding-top: 38px; }
-
       .story-panel { padding: 25px 22px; }
-
       .intro p { font-size: .98rem; }
-
-      .featured-performance {
-        margin: 30px 0 50px;
-      }
-
-      .featured-performance img {
-        max-height: 380px;
-      }
-
-      .gallery-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 12px;
-      }
-
-      .gallery-item img {
-        height: 145px;
-      }
-
-      .booking-cta {
-        padding: 32px 18px;
-      }
-
-      .cta-button {
-        font-size: 1rem;
-        padding: 13px 18px;
-      }
-    }
-
-    @media (max-width: 390px) {
-      .gallery-item img {
-        height: 120px;
-      }
+      .featured-performance { margin: 30px 0 50px; }
+      .featured-performance img { max-height: 380px; }
+      .gallery-grid { grid-template-columns: 1fr; gap: 60px; }
+      .gallery-item img { height: 230px; }
+      .booking-cta { padding: 32px 18px; }
+      .cta-button { font-size: 1rem; padding: 13px 18px; }
+      .rv { --k: .85; }
     }
   </style>
 </head>
@@ -666,64 +192,8 @@
         25 yrs teaching karate, and I've been performing music onstage since the early 90s.
       </p>
     </section>
-    
-<!-- CUSTOMER REVIEW STICKERS -->
 
-<section class="review-stickers" aria-label="Customer reviews">
-
-  <!-- SHAPE 1: DONNA — ROUNDED RECTANGLE -->
-
-  <article class="review-sticker sticker-rounded">
-    <div class="sticker-stars">★★★★★</div>
-    <div class="sticker-heading">SUCH A FUN SHOW!</div>
-    <p class="sticker-quote">
-      “Dave has great energy, an extensive playlist,
-      and really knows how to get the crowd involved!”
-    </p>
-    <div class="sticker-author">— Donna Baker</div>
-    <span class="sticker-source">Google Review</span>
-  </article>
-
-  <!-- SHAPE 3: JAY — VINTAGE TICKET -->
-
-  <article class="review-sticker sticker-ticket">
-    <div class="sticker-heading">A PARTY TO REMEMBER</div>
-    <p class="sticker-quote">
-      “Our friends and most importantly my wife
-      had a blast!”
-    </p>
-    <div class="sticker-author">— Jay Ash</div>
-    <span class="sticker-source">Facebook Review · September 2021</span>
-  </article>
-
-  <!-- SHAPE 4: DEBBIE — BRUSHSTROKE -->
-
-  <article class="review-sticker sticker-brush">
-    <div class="sticker-stars">★★★★★</div>
-    <div class="sticker-heading">NEVER DISAPPOINTS!</div>
-    <p class="sticker-quote">
-      “Dave always puts on a great show!!!
-      Never disappoints!!!”
-    </p>
-    <div class="sticker-author">— Debbie Mousseau</div>
-    <span class="sticker-source">Google Review</span>
-  </article>
-
-  <!-- SHAPE 5: BRAND STICKER -->
-
-  <article class="review-sticker sticker-brand">
-    <strong>CREATING FUN TIMES</strong>
-    <p class="sticker-quote">
-      Great music. Familiar favorites.
-      Full-band sound from one performer.
-    </p>
-    <div class="sticker-author">DAVE GRAHAM LIVE</div>
-  </article>
-
-</section>
-
-
-    <!-- FEATURED PERFORMANCE PHOTO -->
+    <!-- FEATURED PERFORMANCE PHOTO (review stickers are added to this photo by the script at the bottom) -->
 
     <figure class="featured-performance">
       <button type="button"
@@ -749,35 +219,43 @@
 
       <div class="gallery-grid">
 
-        <button class="gallery-item" type="button"
-          data-full="hilltopshot.png"
-          aria-label="Enlarge performance photo">
-          <img src="hilltopshot.png"
-            alt="Dave Graham Live performance setup">
-        </button>
+        <div class="cell">
+          <button class="gallery-item" type="button"
+            data-full="hilltopshot.png"
+            aria-label="Enlarge performance photo">
+            <img src="hilltopshot.png"
+              alt="Dave Graham Live performance setup">
+          </button>
+        </div>
 
-        <button class="gallery-item" type="button"
-          data-full="fullrigatHilltop.png"
-          aria-label="Enlarge performance photo">
-          <img src="fullrigatHilltop.png"
-            alt="Dave performing at his keyboard with stage lighting">
-        </button>
+        <div class="cell">
+          <button class="gallery-item" type="button"
+            data-full="fullrigatHilltop.png"
+            aria-label="Enlarge performance photo">
+            <img src="fullrigatHilltop.png"
+              alt="Dave performing at his keyboard with stage lighting">
+          </button>
+        </div>
 
-        <button class="gallery-item" type="button"
-          data-full="homepage-redesign-draft/assets/images/dave-nye-eagles.png"
-          aria-label="Enlarge performance photo">
-          <img
-            src="homepage-redesign-draft/assets/images/dave-nye-eagles.png"
-            alt="Dave performing for a live audience">
-        </button>
+        <div class="cell">
+          <button class="gallery-item" type="button"
+            data-full="homepage-redesign-draft/assets/images/dave-nye-eagles.png"
+            aria-label="Enlarge performance photo">
+            <img
+              src="homepage-redesign-draft/assets/images/dave-nye-eagles.png"
+              alt="Dave performing for a live audience">
+          </button>
+        </div>
 
-       <button class="gallery-item" type="button"
-  data-full="homepage-redesign-draft/assets/images/Clapping-hands.jpg"
-  aria-label="Enlarge audience photo">
-  <img
-    src="homepage-redesign-draft/assets/images/Clapping-hands.jpg"
-    alt="Audience members applauding during a live performance">
-</button>
+        <div class="cell">
+          <button class="gallery-item" type="button"
+            data-full="homepage-redesign-draft/assets/images/Clapping-hands.jpg"
+            aria-label="Enlarge audience photo">
+            <img
+              src="homepage-redesign-draft/assets/images/Clapping-hands.jpg"
+              alt="Audience members applauding during a live performance">
+          </button>
+        </div>
 
       </div>
     </section>
@@ -913,6 +391,56 @@
       }
     });
   </script>
+
+  <!-- REVIEW STICKERS
+       c = which photo (0 = featured photo, 1-4 = gallery photos in order)
+       w = width, r = tilt (degrees), pos = position (negative values hang over the photo edge)
+       f = [font, size scale] -->
+  <script>
+    (function () {
+      var S = [
+        {c:0,s:"rect",bg:"#fff7a8",fg:"#3a3500",st:"#e8a200",w:280,r:-6,pos:"top:-30px;left:-20px",f:["Caveat Brush",1.3],n:"Brad-Leah Seigars",t:"Absolutely amazing performer! You would never guess it’s just one guy putting on the whole show!"},
+        {c:0,s:"banner",bg:"#7b2cbf",fg:"#fff",st:"#ffd23f",w:290,r:4,pos:"top:30%;right:-18px",f:["Bangers",1.2],n:"Jennifer Hoyt",t:"David puts on a great high-energy show. Always fun and professional. We have hired him for many of our events."},
+        {c:0,s:"star",bg:"#2385e8",fg:"#fff",st:"#fff000",w:220,r:12,pos:"bottom:-44px;right:5%",f:["Bowlby One",.8],n:"Debbie Mousseau",t:"Never disappoints!!!"},
+        {c:1,s:"bubble",bg:"#fff",fg:"#222",st:"#e8a200",w:250,r:-4,pos:"top:-26px;left:-14px",f:["Gochi Hand",1.25],n:"Donna Baker",t:"Such a fun show! Dave has great energy, an extensive playlist, and really knows how to get the crowd involved! Rock on DG 🎸"},
+        {c:1,s:"pill",bg:"#ff9f1c",fg:"#2a1600",st:"#fff",w:250,r:5,pos:"bottom:-24px;right:-12px",f:["Pacifico",.9],n:"Mike Szanto",t:"Saw him playing at Frontera Mexican and he was fantastic."},
+        {c:2,s:"circle",bg:"#fff000",fg:"#090b10",st:"#b33a00",w:220,r:-9,pos:"bottom:-34px;left:6%",f:["Chewy",1.1],n:"Janis",t:"Dave is so fun. So energetic and friendly, and talented!"},
+        {c:3,s:"brush2",bg:"#ff4f8b",fg:"#fff",st:"#fff",w:230,r:-6,pos:"bottom:-24px;left:-10px",f:["Permanent Marker",.95],n:"Ryan Gingras",t:"Does an amazing version of Bad Wolves cover of Zombie!"},
+        {c:4,s:"ticket",bg:"#f4ecd9",fg:"#171717",st:"#d9a400",w:290,r:3,pos:"top:-18px;right:-12px",f:["Special Elite",.95],n:"Danielle Taylor",t:"He gets the crowd going. When he is playing at our location establishment I know it will be a good time with great music."},
+      ];
+      var BRUSH = {
+        brush1: "M4 22C14 6 40 12 70 8S150 2 196 10c6 14 2 30-2 44-40 8-90 4-130 10S12 62 6 52C2 42 2 32 4 22Z",
+        brush2: "M2 30C10 12 36 4 74 12S160 0 198 14c4 18-6 34-10 52-34-6-76 6-118 0S14 70 6 58C0 48 0 40 2 30Z"
+      };
+      function starClip(n, a, b) {
+        var p = [], i, r, t;
+        for (i = 0; i < n * 2; i++) {
+          r = i % 2 ? b : a; t = Math.PI * i / n;
+          p.push((50 + r * Math.sin(t)).toFixed(1) + "% " + (50 - r * Math.cos(t)).toFixed(1) + "%");
+        }
+        return "polygon(" + p.join(",") + ")";
+      }
+      function esc(s) { return s.replace(/&/g, "&amp;").replace(/</g, "&lt;"); }
+      var slots = [document.querySelector(".featured-performance")]
+        .concat(Array.prototype.slice.call(document.querySelectorAll(".cell")));
+      S.forEach(function (r) {
+        var host = slots[r.c];
+        if (!host) return;
+        var shape = r.s.indexOf("brush") === 0 ? "brush" : r.s;
+        var d = document.createElement("div");
+        d.className = "rv rv-" + shape;
+        d.style.cssText = "--f:'" + r.f[0] + "';--fs:" + r.f[1] + ";--w:" + r.w + ";--r:" + r.r + "deg;--bg:" + r.bg + ";--bg2:" + (r.bg2 || r.bg) + ";--fg:" + r.fg + ";--st:" + r.st + ";" + r.pos;
+        var bg = shape === "brush" ? '<svg viewBox="0 0 200 70" preserveAspectRatio="none" aria-hidden="true"><path d="' + BRUSH[r.s] + '" fill="' + r.bg + '"/></svg>' : "";
+        var q = r.nq ? esc(r.t) : "“" + esc(r.t) + "”";
+        d.innerHTML = '<div class="rv-b"' + (shape === "star" ? ' style="--clip:' + starClip(22, 50, 40) + '"' : "") + ">" + bg +
+          '<span class="rv-s" aria-label="5 stars">★★★★★</span><span class="rv-q">' + q + '</span><span class="rv-n">' + esc(r.n) + '</span><span class="rv-g">' + (r.src || "Google review") + "</span></div>";
+        host.appendChild(d);
+      });
+    })();
+  </script>
+
+</body>
+</html>
 
 </body>
 </html>
