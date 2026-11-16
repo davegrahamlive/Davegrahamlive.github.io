@@ -340,6 +340,7 @@
 
   </main>
 
+ 
   <footer>
     <a href="https://www.facebook.com/davegrahamlive/" aria-label="Facebook">
       <svg viewBox="0 0 24 24" fill="none">
@@ -398,8 +399,24 @@
     </div>
   </footer>
 
+  <script>
+    function loadScript(a) {
+      var b = document.getElementsByTagName("head")[0],
+          c = document.createElement("script");
+      c.type = "text/javascript";
+      c.src = "https://tracker.metricool.com/resources/be.js";
+      c.onreadystatechange = a;
+      c.onload = a;
+      b.appendChild(c);
+    }
+    loadScript(function() {
+      beTracker.t({hash:"614b01daeb55d11d075bc2dde9e0e705"});
+    });
+  </script>
+
 </body>
 </html>
+
 
 
   </footer>
