@@ -396,7 +396,8 @@
        c = which photo (0 = featured photo, 1-4 = gallery photos in order)
        w = width, r = tilt (degrees), pos = position (negative values hang over the photo edge)
        f = [font, size scale] -->
-  <script>
+ 
+<script>
     (function () {
       var S = [
         {c:0,s:"rect",bg:"#fff7a8",fg:"#3a3500",st:"#e8a200",w:280,r:-6,pos:"top:-30px;left:-20px",f:["Caveat Brush",1.3],n:"Brad-Leah Seigars",t:"Absolutely amazing performer! You would never guess it’s just one guy putting on the whole show!"},
@@ -439,8 +440,24 @@
     })();
   </script>
 
+  <script>
+    function loadScript(a) {
+      var b = document.getElementsByTagName("head")[0],
+          c = document.createElement("script");
+      c.type = "text/javascript";
+      c.src = "https://tracker.metricool.com/resources/be.js";
+      c.onreadystatechange = a;
+      c.onload = a;
+      b.appendChild(c);
+    }
+    loadScript(function() {
+      beTracker.t({hash:"614b01daeb55d11d075bc2dde9e0e705"});
+    });
+  </script>
+
 </body>
 </html>
+
 
 </body>
 </html>
