@@ -3374,36 +3374,79 @@ td {
         "Genre": "Pop / Rock",
         "Categories": "Dance / Party"
     }];
-    const $ = x => document.getElementById(x);
-    const unique = a => [...new Set(a.filter(Boolean))].sort((a, b) => a.localeCompare(b));
-    for (const [id, vals] of [['genre', songs.map(s => s.Genre)], ['decade', songs.map(s => s.Decade)], ['category', songs.flatMap(s => s.Categories ? s.Categories.split('; ') : [])]])
-        for (const v of unique(vals)) {
-            const o = document.createElement('option');
-            o.value = v;
-            o.textContent = v;
-            $(id).append(o)
-        }
-    function render() {
-        const q = $('q').value.toLowerCase(),
-            g = $('genre').value,
-            d = $('decade').value,
-            c = $('category').value,
-            sort = $('sort').value;
-        let a = songs.filter(s => (!q || (s['Song Title'] + ' ' + s.Artist).toLowerCase().includes(q)) && (!g || s.Genre === g) && (!d || s.Decade === d) && (!c || (s.Categories || '').split('; ').includes(c)));
-        a.sort((x, y) => sort === 'artist' ? x.Artist.localeCompare(y.Artist) || x['Song Title'].localeCompare(y['Song Title']) : sort === 'decade' ? (x.Decade || '9990s').localeCompare(y.Decade || '9990s') || x['Song Title'].localeCompare(y['Song Title']) : sort === 'genre' ? x.Genre.localeCompare(y.Genre) || x['Song Title'].localeCompare(y['Song Title']) : x['Song Title'].localeCompare(y['Song Title']) || x.Artist.localeCompare(y.Artist));
-        $('count').textContent = a.length + ' songs shown';
-        $('body').replaceChildren(...a.map(s => {
-            const tr = document.createElement('tr');
-            for (const v of [s['Song Title'], s.Artist, s.Decade, s.Genre, s.Categories]) {
-                const td = document.createElement('td');
-                td.textContent = v || '';
-                tr.append(td)
-            }
-            return tr
-        }))
+  
+const $ = x => document.getElementById(x);
+const unique = a => [...new Set(a.filter(Boolean))].sort((a, b) => a.localeCompare(b));
+
+for (const [id, vals] of [
+    ['genre', songs.map(s => s.Genre)],
+    ['decade', songs.map(s => s.Decade)],
+    ['category', songs.flatMap(s => s.Categories ? s.Categories.split('; ') : [])]
+])
+    for (const v of unique(vals)) {
+        const o = document.createElement('option');
+        o.value = v;
+        o.textContent = v;
+        $(id).append(o);
     }
-    ['q', 'sort', 'genre', 'decade', 'category'].forEach(id => $(id).addEventListener(id === 'q' ? 'input' : 'change', render));
-    render();
-    </script>
+
+function render() {
+    const q = $('q').value.toLowerCase(),
+        g = $('genre').value,
+        d = $('decade').value,
+        c = $('category').value,
+        sort = $('sort').value;
+
+    let a = songs.filter(s =>
+        (!q || (s['Song Title'] + ' ' + s.Artist).toLowerCase().includes(q)) &&
+        (!g || s.Genre === g) &&
+        (!d || s.Decade === d) &&
+        (!c || (s.Categories || '').split('; ').includes(c))
+    );
+
+    a.sort((x, y) =>
+        sort === 'artist' ? x.Artist.localeCompare(y.Artist) || x['Song Title'].localeCompare(y['Song Title']) :
+        sort === 'decade' ? (x.Decade || '9990s').localeCompare(y.Decade || '9990s') || x['Song Title'].localeCompare(y['Song Title']) :
+        sort === 'genre' ? x.Genre.localeCompare(y.Genre) || x['Song Title'].localeCompare(y['Song Title']) :
+        x['Song Title'].localeCompare(y['Song Title']) || x.Artist.localeCompare(y.Artist)
+    );
+
+    $('count').textContent = a.length + ' songs shown';
+
+    $('body').replaceChildren(...a.map(s => {
+        const tr = document.createElement('tr');
+        for (const v of [s['Song Title'], s.Artist, s.Decade, s.Genre, s.Categories]) {
+            const td = document.createElement('td');
+            td.textContent = v || '';
+            tr.append(td);
+        }
+        return tr;
+    }));
+}
+
+['q', 'sort', 'genre', 'decade', 'category'].forEach(id =>
+    $(id).addEventListener(id === 'q' ? 'input' : 'change', render)
+);
+
+render();
+</script>
+
+<!-- Metricool tracking -->
+<script>
+function loadScript(a) {
+    var b = document.getElementsByTagName("head")[0],
+        c = document.createElement("script");
+    c.type = "text/javascript";
+    c.src = "https://tracker.metricool.com/resources/be.js";
+    c.onreadystatechange = a;
+    c.onload = a;
+    b.appendChild(c);
+}
+loadScript(function() {
+    beTracker.t({hash:"614b01daeb55d11d075bc2dde9e0e705"});
+});
+</script>
+
 </body>
 </html>
+
